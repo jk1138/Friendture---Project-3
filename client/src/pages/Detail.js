@@ -13,11 +13,11 @@ class Detail extends Component {
   // The book id for this route can be accessed using this.props.match.params.id
 
   componentDidMount() {
-    console.log(window.location.href);
+ 
     const hrefSplit = window.location.href.split("/");
     const id = hrefSplit[hrefSplit.length - 1];
 
-    console.log(id);
+
 
     API.getBook(id).then(response => this.setState({ book: response.data }))
   }
