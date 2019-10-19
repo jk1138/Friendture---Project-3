@@ -1,3 +1,5 @@
 module.exports = {
-  Book: require("./book")
+  User: require("./user.js"),
+  Post: require("./post.js"),
+  Trophy: require("./trophies.js")
 };
