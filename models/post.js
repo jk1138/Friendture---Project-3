@@ -6,7 +6,8 @@ const postSchema = new Schema({
     body: { type: String, required: true },
     pic: { type: String },
     date: { type: Date, default: Date.now },
-    user: { type: Schema.Types.ObjectId, ref: "User" }
+    user: { type: Schema.Types.ObjectId, ref: "User" },
+    reactions: {type: Array}
 });
 
 const Post = mongoose.model("Post", postSchema);
