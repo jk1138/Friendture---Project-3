@@ -1,8 +1,8 @@
 import React from "react";
-import Books from "./pages/Books";
-import Detail from "./pages/Detail";
-import NoMatch from "./pages/NoMatch";
-import Nav from "./components/Nav";
+import Books from "../temp-src/pages/Books";
+import Detail from "../temp-src/pages/Detail";
+import NoMatch from "../temp-src/pages/NoMatch";
+import Nav from "../temp-src/components/Nav";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 
