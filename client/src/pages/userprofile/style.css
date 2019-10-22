@@ -143,3 +143,12 @@
   .go-top:hover {
       background-color: rgba(255, 0, 255, 0.6);
   }
+
+  .card-columns {
+    @include media-breakpoint-only(lg) {
+      column-count: 4;
+    }
+    @include media-breakpoint-only(xl) {
+      column-count: 5;
+    }
+  }
