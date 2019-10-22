@@ -1,0 +1,145 @@
+
+ body {
+    padding-left: 10%;
+    padding-right: 10%;
+    background: #f8f8f8;
+    background: -webkit-linear-gradient(#f8f8f8, #cccccc); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#f8f8f8, #cccccc); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#f8f8f8, #cccccc); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#f8f8f8, #cccccc); /* Standard syntax */
+  }
+  .container-fluid { 
+      background: #f8f8f8;
+  }
+  
+  a:hover {
+      background: #ffff00;
+      color: #000000;
+      text-decoration: none;
+  }
+  .nonstickyheader {
+      background: #ffffff;
+      padding-top: 25px;
+      padding-bottom: 25px;
+  
+  }
+  
+  
+  .thumb-holder {
+      background: #ffff66;
+      box-shadow: 0 3px 5px rgba(0,0,0,0.23), 0 3px 5px rgba(0,0,0,0.30);
+      margin-bottom: 20px;
+  }
+  
+  .thumb-holder:hover {
+      opacity: .9;
+      box-shadow: 0 1px 2px
+    rgba(0,0,0,0.30), 0 1px 2px rgba(0,0,0,0.37);
+  }
+  
+  img.thumb {
+      border: 0px;
+      width: 100%;
+  }
+  
+  h3.thumb-cap {
+          font-family: 'VT323', monospace;
+          font-size: 16px;
+          padding: 10px;
+          margin: 0px;
+          background: #ffffff;
+  }
+  
+  
+  
+  .sticky-pink {
+      background: #ff99ff;
+      padding: 25px;
+  }
+  .sticky-yellow {
+      background: #ffff99;
+      padding: 10px;
+      /* margin-bottom: 10px; */
+  }
+  
+  .paper-shadow {
+    box-shadow: 0 2px 3px rgba(0,0,0,0.16), 0 2px 3px rgba(0,0,0,0.23);
+  }
+  
+  .shrink-image {
+      width: 100%;
+      padding: 35px;
+  }
+  .shrink-diagram {
+      width: 100%;
+      padding-top: 12%;
+      padding-bottom: 12%;
+  }
+  
+  .thick-marker {
+      font-family: 'Permanent Marker', Georgia, Serif;
+  }
+  
+  .thin-pencil {
+      font-family: 'Caveat', Helvetica, Sans-serif;
+      font-size: 26px;
+      line-height: 1.2em;
+  }
+  .highlighter {
+      background: #ffff00;
+      padding: 0 5px;
+      color: #000000;
+  }
+  
+  .add-space-above {
+      margin-top: 25px;
+  }
+  .add-space-below {
+      margin-bottom: 25px;
+  }
+  
+  .add-space-leftright {
+      margin-left: 10px;
+      margin-right: 10px;
+  }
+  
+  .padding-leftright {
+      padding-left: 8%;
+      padding-right: 8%;
+  }	
+  
+  .padding-all-around {
+      padding: 7% 15%;
+  }
+  
+  .twothirds-centered {
+      width: 66%;
+      margin: 0 auto;
+  }
+  
+  .contact-me-icons a {
+      font-size: 30px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+  }
+  .contact-me-icons a:hover {
+      color: #000000;
+      background: #ffff00;
+      opacity: .6;
+  }
+  
+  /******************************************GO TOP button from YYING6*****************************************/
+  .go-top {
+      position: fixed;
+      bottom: 3em;
+      right: 8%;
+      text-decoration: none;
+      background-color: rgba(255, 0, 255, 0.3);
+      font-size: 12px;
+      padding: 1em;
+      display: none;
+  }
+  
+  .go-top:hover {
+      background-color: rgba(255, 0, 255, 0.6);
+  }
