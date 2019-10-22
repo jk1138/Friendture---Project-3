@@ -1,24 +1,22 @@
 import React from "react";
-import Books from "../temp-src/pages/Books";
-import Detail from "../temp-src/pages/Detail";
-import NoMatch from "../temp-src/pages/NoMatch";
-import Nav from "../temp-src/components/Nav";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Homepage from "./pages/Homepage"
+// import CreateAccountForm from "./components/Form"
+// import SubmitButton from "./components/Button"
 
 
 function App() {
   return (
-    <Router>
+    // <Router>
       <div>
-        <Nav />
-        <Switch>
+        <Homepage />
+        {/* <Switch>
           <Route exact path="/" component={Books} />
           <Route exact path="/books" component={Books} />
           <Route exact path="/books/:id" component={Detail} />
           <Route component={NoMatch} />
-        </Switch>
+        </Switch> */}
       </div>
-    </Router>
+    // </Router>
   );
 }
 
