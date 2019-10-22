@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import CreateAccountForm from "../components/Form";
+import CreateAccountForm from "../components/CreateAccount";
 import SubmitButton from "../components/Button";
 
 
