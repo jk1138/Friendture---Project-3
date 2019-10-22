@@ -2,13 +2,10 @@ const router = require("express").Router();
 const trophyController = require("../../controllers/trophyController");
 
 router.route("/")
-  .get(trophyController.trophy.findAll)
-  .post(trophyController.create);
+  .get(trophyController.trophy.findAllTrophies);
 
 router
   .route("/:id")
-  .get(trophyController.findById)
-  .put(trophyController.update)
-  .delete(trophyController.remove);
+  .put(trophyController.updateTrohpy);
 
 module.exports = router;
