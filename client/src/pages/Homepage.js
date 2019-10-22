@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import CreateAccountForm from "../components/Form"
+import CreateAccountForm from "../components/Form";
+import SubmitButton from "../components/Button";
 
 
 class Homepage extends Component {
@@ -35,7 +36,12 @@ class Homepage extends Component {
 
     render() {
         return (
-            <CreateAccountForm />
+            <div>
+                <CreateAccountForm />
+                <SubmitButton disabled={!(this.state.username && this.state.password && this.state.email)}
+                onClick={() => this.handleFormSubmit}
+                />
+            </div>
         )
     }
 }
