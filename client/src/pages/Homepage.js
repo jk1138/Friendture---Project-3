@@ -1,6 +1,8 @@
 import React, { Component } from "react";
-import CreateAccountForm from "../components/CreateAccount";
-import SubmitButton from "../components/Button";
+import CreateAccountForm from "../components/CreateAccountForm";
+import CreateAccountButton from "../components/CreateAccountButton";
+import SignInForm from "../components/SignInForm";
+import SignInButton from "../components/SignInButton";
 
 
 class Homepage extends Component {
@@ -19,8 +21,8 @@ class Homepage extends Component {
         });
     };
 
-    // submit sign up
-    handleFormSubmit = (e) => {
+    // submit create account
+    handleCreateAccountFormSubmit = (e) => {
         e.preventDefault();
         if (this.state.username && this.state.password && this.state.email) {
             // insert API to save the new user :
@@ -34,12 +36,31 @@ class Homepage extends Component {
         }
     };
 
+    // submit sign in
+    handleSignInFormSubmit = (e) => {
+        e.preventDefault();
+        if (this.state.username && this.state.password) {
+            // insert API to route to user's profile :
+            // PLACEHOLDER
+            // API.userProfile({
+            // username: this.state.username,
+            // password: this.state.password,
+            // })
+            // .then(res => route to user profile id)
+            // .catch(err => console.log(err));
+        }
+    };
+
     render() {
         return (
             <div>
                 <CreateAccountForm />
-                <SubmitButton disabled={!(this.state.username && this.state.password && this.state.email)}
-                onClick={() => this.handleFormSubmit}
+                <CreateAccountButton disabled={!(this.state.username && this.state.password && this.state.email)}
+                    onClick={() => this.handleCreateAccountFormSubmit}
+                />
+                <SignInForm />
+                <SignInButton disabled={!(this.state.username && this.state.password)}
+                    onClick={() => this.handleSignInFormSubmit}
                 />
             </div>
         )

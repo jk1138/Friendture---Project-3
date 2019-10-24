@@ -1,12 +1,12 @@
 import React from "react";
 import "./style.css";
 
-function SubmitButton(props) {
+function SignInButton(props) {
     return (
     <span {...props} role="button" tabIndex="0">
-        Create Account
+        Sign In
     </span>
     )
 };
 
-export default SubmitButton;
+export default SignInButton;
