@@ -1,5 +1,6 @@
 import React from "react";
 import Homepage from "./pages/Homepage"
+import Nav from "./components/Navbar";
 // import CreateAccountForm from "./components/Form"
 // import SubmitButton from "./components/Button"
 
@@ -8,7 +9,7 @@ function App() {
   return (
     // <Router>
       <div>
-        <Homepage />
+        <Nav />
         {/* <Switch>
           <Route exact path="/" component={Books} />
           <Route exact path="/books" component={Books} />
