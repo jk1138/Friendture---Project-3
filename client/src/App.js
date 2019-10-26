@@ -1,5 +1,10 @@
 import React from "react";
+
 import FriendFeed from "./pages/Feed-Friendlist";
+
+import Homepage from "./pages/Homepage"
+// import Nav from "./components/Navbar";
+
 // import CreateAccountForm from "./components/Form"
 // import SubmitButton from "./components/Button"
 
@@ -8,6 +13,7 @@ function App() {
   return (
     // <Router>
       <div>
+
         <FriendFeed/>
         {/* <Switch>
           <Route exact path="/" component={Books} />
