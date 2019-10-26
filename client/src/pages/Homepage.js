@@ -14,7 +14,7 @@ class Homepage extends Component {
 
     // sign up form
     handleInputChange = (e) => {
-        const { name, value } = e.target;
+        const { name, value } = e.target.value;
 
         this.setState({
             [name]: value
