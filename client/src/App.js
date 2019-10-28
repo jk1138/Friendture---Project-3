@@ -1,8 +1,9 @@
 import React from "react";
 
 import FriendFeed from "./pages/Feed-Friendlist";
+import TrophyCard from "./components/TrophyList";
 
-import Homepage from "./pages/Homepage"
+// import Homepage from "./pages/Homepage"
 // import Nav from "./components/Navbar";
 
 // import CreateAccountForm from "./components/Form"
@@ -21,6 +22,7 @@ function App() {
           <Route exact path="/books/:id" component={Detail} />
           <Route component={NoMatch} />
         </Switch> */}
+        <TrophyCard />
       </div>
     // </Router>
   );
