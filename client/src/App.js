@@ -1,5 +1,7 @@
+
 // import FriendFeed from "./pages/Feed-Friendlist";
 // import TrophyCard from "./components/TrophyList";
+
 import React from 'react';
 import Navbar from "./components/Navbar";
 import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
@@ -33,7 +35,6 @@ class App extends React.Component {
             {/* <img src={logo} className="App-logo" alt="logo" /> */}
             {
               user
-          
                 ? 
                 <div>
                   <p>Hello, {user.displayName}</p>
@@ -112,6 +113,7 @@ class App extends React.Component {
           </header>
         </div>
       {/* <TrophyCard /> */}
+
       </div>
     );
   }
