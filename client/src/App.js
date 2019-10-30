@@ -67,7 +67,11 @@ class App extends React.Component {
           {/* <img src={logo} className="App-logo" alt="logo" /> */}
           {
             user 
-              ? <p>Hello, {user.displayName}</p>
+              ? 
+              <div> <p>Hello, {user.displayName}</p>
+               <p>Email: {user.email}</p>
+               <img src={user.photoURL} className="profile-img"/>
+               </div>
               : <p>Please sign in.</p>
           }
           {
