@@ -1,9 +1,17 @@
-import React from "react";
+import React, {Component} from "react";
 
 // back of card
 
-function TrophyEmailForm() {
+class TrophyEmailForm extends Component {
+
+onSubmit = (e) => {
+  e.preventDefault();
+}
+
+  render () {
     return (
+      <div>
+      <h1>back</h1>
     <form>
   <div class="form-group">
     <label for="exampleInputEmail1">Email address</label>
@@ -18,9 +26,11 @@ function TrophyEmailForm() {
     <input type="checkbox" class="form-check-input" id="exampleCheck1" />
     <label class="form-check-label" for="exampleCheck1">Check me out</label>
   </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" class="btn btn-primary" onClick={this.onSubmit}>Submit</button>
 </form>
+</div>
     )
+  }
 }
         
 export default TrophyEmailForm;

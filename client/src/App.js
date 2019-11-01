@@ -71,6 +71,9 @@ class App extends React.Component {
         <div>
           <Navbar />
         </div>
+        <div>
+        <Trophy />
+        </div>
         {/* </Router> */}
         <div className="App">
           <header className="App-header">
@@ -161,8 +164,12 @@ class App extends React.Component {
                 </button>
             }
           </header>
+<<<<<<< HEAD
+      
+=======
 
           <Trophy />
+>>>>>>> b7c82b6b09e233a1c8ac6ac4d4251519a7e0b032
         </div>
 
 
