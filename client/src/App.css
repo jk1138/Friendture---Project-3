@@ -52,3 +52,9 @@ a {
   height: 37px;
   display: inline-block;
  }
+
+ .feedBackground {
+   background-image: url("https://mdbootstrap.com/img/Photos/Others/photo7.jpg");
+ }
+
+ 
