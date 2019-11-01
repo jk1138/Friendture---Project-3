@@ -12,16 +12,11 @@ import withFirebaseAuth from 'react-with-firebase-auth'
 import * as firebase from 'firebase/app';
 import 'firebase/auth';
 import firebaseConfig from './firebaseConfig';
-
 const firebaseApp = firebase.initializeApp(firebaseConfig);
-
 const firebaseAppAuth = firebaseApp.auth();
 const providers = {
   googleProvider: new firebase.auth.GoogleAuthProvider(),
 };
-
-
-
 class App extends React.Component {
 
   render() {
@@ -32,8 +27,6 @@ class App extends React.Component {
     } = this.props;
 
     return (
-
-
       <div>
         {/* <Router> */}
         <div>
@@ -50,6 +43,7 @@ class App extends React.Component {
             {
               user
                 ? <p>Hello, {user.displayName}</p>
+
                 : <p>Please sign in.</p>
             }
             {
@@ -122,7 +116,12 @@ class App extends React.Component {
                 </button>
             }
           </header>
+<<<<<<< HEAD
       
+=======
+
+          <Trophy />
+>>>>>>> b7c82b6b09e233a1c8ac6ac4d4251519a7e0b032
         </div>
 
 
@@ -148,6 +147,7 @@ function App() { */}
           <Route exact path="/books/:id" component={Detail} />
           <Route component={NoMatch} />
         </Switch> */}
+
 
       </div>
     );
