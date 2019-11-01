@@ -13,6 +13,7 @@ const userController = {
       .catch(err => res.status(422).json(err));
   },
   createUser: function (req, res) {
+    console.log("hello world")
     db.User.create(req.body)
       .then(dbUser => res.json(dbUser))
       .catch(err => res.status(422).json(err));
