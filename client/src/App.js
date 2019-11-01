@@ -39,6 +39,9 @@ class App extends React.Component {
         <div>
           <Navbar />
         </div>
+        <div>
+        <Trophy />
+        </div>
         {/* </Router> */}
         <div className="App">
           <header className="App-header">
@@ -119,7 +122,7 @@ class App extends React.Component {
                 </button>
             }
           </header>
-          <Trophy />
+      
         </div>
 
 
