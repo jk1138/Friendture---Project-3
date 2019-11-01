@@ -11,12 +11,50 @@ import withFirebaseAuth from 'react-with-firebase-auth'
 import * as firebase from 'firebase/app';
 import 'firebase/auth';
 import firebaseConfig from './firebaseConfig';
+import userAPI from "./utils/userAPI";
 const firebaseApp = firebase.initializeApp(firebaseConfig);
 const firebaseAppAuth = firebaseApp.auth();
 const providers = {
   googleProvider: new firebase.auth.GoogleAuthProvider(),
 };
 class App extends React.Component {
+
+ 
+
+  savingUsers = (userData) => {
+    userAPI.saveUsers(userData).then(
+      (res) => {
+        console.log(res);
+      }
+    ).catch(err => console.log(err))
+  }
+
+  realSignIn = () => {
+
+    this.props.signInWithGoogle().then((res) => {
+      console.log(res)
+     const email = res.additionalUserInfo.profile.email
+
+     const userData = {email: email}
+     console.log(userData)
+
+
+     if (res.additionalUserInfo.isNewUser === true) {
+      this.savingUsers(userData)
+     }
+    
+    })
+
+  }
+ 
+
+  gettingUsers = () => {
+    userAPI.getUsers().then(
+      (res) => {
+        console.log(res);
+      }
+    ).catch(err => console.log(err))
+  }
   render() {
     const {
       user,
@@ -36,10 +74,12 @@ class App extends React.Component {
             {
               user
                 ? 
+                
                 <div>
                   <p>Hello, {user.displayName}</p>
                   <p>Email: {user.email}</p>
                   <img src={user.photoURL} className="profile-img"/>
+
                   </div>
                 : <p>Please sign in.</p>
             }
@@ -77,7 +117,7 @@ class App extends React.Component {
                     <span class="button-label">Sign Out</span>
                   </div>
                 </button>
-                : <button onClick={signInWithGoogle} href="/auth/google" class="button">
+                : <button onClick={this.realSignIn} href="/auth/google" class="button">
                   <div>
                     <span class="svgIcon t-popup-svg">
                       <svg
