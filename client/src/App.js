@@ -3,8 +3,9 @@
 // import TrophyCard from "./components/TrophyList";
 
 import React from 'react';
+import Trophy from "./pages/Trophies";
 import Navbar from "./components/Navbar";
-import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
+// import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
 // import logo from './logo.svg';
 import './App.css';
 import withFirebaseAuth from 'react-with-firebase-auth'
@@ -18,6 +19,7 @@ const providers = {
   googleProvider: new firebase.auth.GoogleAuthProvider(),
 };
 class App extends React.Component {
+
 
  
 
@@ -55,24 +57,28 @@ class App extends React.Component {
       }
     ).catch(err => console.log(err))
   }
+
   render() {
     const {
       user,
       signOut,
       signInWithGoogle,
     } = this.props;
+
     return (
       <div>
-        <Router>
-          <div>
-            <Navbar />
-          </div>
-        </Router>
+        {/* <Router> */}
+        <div>
+          <Navbar />
+        </div>
+        {/* </Router> */}
         <div className="App">
           <header className="App-header">
+
             {/* <img src={logo} className="App-logo" alt="logo" /> */}
             {
               user
+
                 ? 
                 
                 <div>
@@ -81,10 +87,12 @@ class App extends React.Component {
                   <img src={user.photoURL} className="profile-img"/>
 
                   </div>
+
                 : <p>Please sign in.</p>
             }
             {
               user
+
                 ? <button onClick={signOut} href="/auth/google" class="button">
                   <div>
                     <span class="svgIcon t-popup-svg">
@@ -117,7 +125,9 @@ class App extends React.Component {
                     <span class="button-label">Sign Out</span>
                   </div>
                 </button>
+
                 : <button onClick={this.realSignIn} href="/auth/google" class="button">
+
                   <div>
                     <span class="svgIcon t-popup-svg">
                       <svg
@@ -151,14 +161,40 @@ class App extends React.Component {
                 </button>
             }
           </header>
+
+          <Trophy />
         </div>
-      {/* <TrophyCard /> */}
+
+
+        {/* // import React from "react";
+
+// import FriendFeed from "./pages/Feed-Friendlist";
+
+
+// import Nav from "./components/Navbar";
+
+
+
+
+function App() { */}
+        {/* //   return (
+//     // <Router>
+//       <div>
+
+//         <FriendFeed/> */}
+        {/* <Switch>
+          <Route exact path="/" component={Books} />
+          <Route exact path="/books" component={Books} />
+          <Route exact path="/books/:id" component={Detail} />
+          <Route component={NoMatch} />
+        </Switch> */}
+
 
       </div>
     );
   }
 }
-// export default App;
+
 export default withFirebaseAuth({
   providers,
   firebaseAppAuth,

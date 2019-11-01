@@ -14,6 +14,6 @@ const userSchema = new Schema({
     // friendsList: { type: Array }
 });
 
-const User = mongoose.model("User", userSchema);
+const User = mongoose.model('User', userSchema);
 
 module.exports = User;
