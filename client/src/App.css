@@ -60,3 +60,8 @@ a {
    height: auto;
    border-radius: 50%;
  }
+
+ .feedBackground{
+   background-image: url("https://mk0astronomynow9oh6g.kinstacdn.com/wp-content/uploads/2015/07/Aurora_Panorama_3-JROlsen_2048x995.jpg");
+   color: white;
+ }
