@@ -3,7 +3,7 @@ const db = require("../models");
 const userController = {
   findAllUsers: function (req, res) {
     db.User.find(req.query)
-      .sort({ date: -1 })
+      .sort({})
       .then(dbUser => res.json(dbUser))
       .catch(err => res.status(422).json(err));
   },
@@ -13,7 +13,7 @@ const userController = {
       .catch(err => res.status(422).json(err));
   },
   createUser: function (req, res) {
-    console.log("hello world")
+    console.log("hello world");
     db.User.create(req.body)
       .then(dbUser => res.json(dbUser))
       .catch(err => res.status(422).json(err));

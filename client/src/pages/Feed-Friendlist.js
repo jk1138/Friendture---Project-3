@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Nav from "../components/Navbar/index.js";
 import postAPI from "../utils/postAPI.js";
+import PostForm from "../components/PostForm/index.js";
 
 class FriendFeed extends Component {
 
@@ -17,7 +18,7 @@ class FriendFeed extends Component {
     }
 
     gettingPosts = () => {
-        postAPI.getPosts().then(
+        postAPI.findUsers().then(
             (res) => {
                 console.log(res);
                 this.setState({
@@ -35,52 +36,65 @@ class FriendFeed extends Component {
 
     renderPosts = () => {
         console.log(this.state.posts);
-        const postFeed = document.getElementById("postFeed");
-
 
         const thePosts = this.state.posts;
 
-        // postFeed.innerText = (thePosts[0].title);
-
         const theFeed = document.getElementById("theFeed");
-
-
 
         for (let i = 0; i < thePosts.length; i++) {
 
+            let userPosts = thePosts[i].posts;
+            let user = thePosts[i].fullname;
 
+            for (let j = 0; j < userPosts.length; j++) {
 
-            const newCard = document.createElement("div");
-            newCard.setAttribute("class", "card");
-            const cardBody = document.createElement("div");
-            cardBody.setAttribute("class", "card-body");
-            const cardTitle = document.createElement("h5");
-            cardTitle.setAttribute("class", "card-title");
-            cardTitle.textContent = (thePosts[i].title);
-            const cardText = document.createElement("p");
-            cardText.setAttribute("class", "card-text");
-            cardText.textContent = (thePosts[i].body);
-            const cardFooter = document.createElement("div");
-            cardFooter.setAttribute("class", "card-footer text-muted");
-            cardFooter.textContent = (thePosts[i].user + " on " + thePosts[i].date);
+                const newCard = document.createElement("div");
+                newCard.setAttribute("class", "card");
+                const cardBody = document.createElement("div");
+                cardBody.setAttribute("class", "card-body");
+                const cardTitle = document.createElement("h5");
+                cardTitle.setAttribute("class", "card-title");
+                cardTitle.textContent = (userPosts[j].title);
+                const cardText = document.createElement("p");
+                cardText.setAttribute("class", "card-text");
+                cardText.textContent = (userPosts[j].body);
+                const cardFooter = document.createElement("div");
+                cardFooter.setAttribute("class", "card-footer text-muted");
+                cardFooter.textContent = (userPosts[j].user + " on " + userPosts[j].date);
 
+                if (userPosts[j].pic) {
+                    const cardPic = document.createElement("img");
+                    cardPic.setAttribute("class", "card-img-top");
+                    cardPic.setAttribute("src", userPosts[j].pic);
+                    newCard.appendChild(cardPic)
+                };
 
+                cardBody.appendChild(cardTitle);
+                cardBody.appendChild(cardText);
+                cardBody.appendChild(cardFooter);
 
-            if (thePosts[i].pic) {
-                const cardPic = document.createElement("img");
-                cardPic.setAttribute("class", "card-img-top");
-                cardPic.setAttribute("src", thePosts[i].pic);
-                newCard.appendChild(cardPic)
+                newCard.appendChild(cardBody);
+
+                theFeed.appendChild(newCard);
             };
 
-            cardBody.appendChild(cardTitle);
-            cardBody.appendChild(cardText);
-            cardBody.appendChild(cardFooter);
+            const friendLine = document.createElement("div");
+            friendLine.setAttribute("class", "card");
+            const friendSpan = document.createElement("span");
+            const friendButton = document.createElement("button");
+            friendButton.setAttribute("class", "btn btn-primary");
+            const space = "    ";
+            friendButton.innerText = space;
+            friendSpan.appendChild(friendButton);
+            friendLine.appendChild(friendSpan);
+            friendLine.textContent = user;
+            friendLine.appendChild(friendSpan);
 
-            newCard.appendChild(cardBody);
+            
 
 
-            theFeed.appendChild(newCard);
+            const list = document.getElementById("friend-list");
+            list.appendChild(friendLine);
 
 
         }
@@ -95,12 +109,12 @@ class FriendFeed extends Component {
                     <h1>Feed</h1>
                 </div>
                 <div className="container">
-                    <div className="row">
-                        <div className="col-md-3">blah blah blah</div>
-                        <div className="col-md-6" id="theFeed">
-                            <h3 id="postFeed"></h3>
-                        </div>
-                        <div className="col-md-3">Friendslist</div>
+                    <div className="row justify-content-center">
+                        <div className="col-md-3"><PostForm/></div>
+
+                        <div className="col-md-6" id="theFeed"><h2>What's Happening on Friendture:</h2></div>
+
+                        <div className="col-md-3" id="friend-list"><h3>Friendslist</h3></div>
                     </div>
                 </div>
             </div>
