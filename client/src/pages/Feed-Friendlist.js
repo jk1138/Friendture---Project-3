@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Nav from "../components/Navbar/index.js";
+// import Nav from "../components/Navbar/index.js";
 import postAPI from "../utils/postAPI.js";
 import PostForm from "../components/PostForm/index.js";
 
@@ -103,7 +103,7 @@ class FriendFeed extends Component {
     render() {
         return (
             <div>
-                <Nav />
+                {/* <Nav /> */}
 
                 <div className="jumbotron justify-content-center feedBackground">
                     <h1>Feed</h1>
