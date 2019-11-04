@@ -29,13 +29,16 @@ class Trophy extends Component {
    
     render() {
       return (
-          <div className="border">
+
+      this.state.trophiesJSON.map(
+        item =>  <div className="border addMargin">
            
-        <ReactCardFlip className="border" isFlipped={this.state.isFlipped} flipDirection="vertical">
+        <ReactCardFlip className="border" isFlipped={this.state.isFlipped} flipSpeedFrontToBack={1.0}
+      flipSpeedBackToFront={1.0} flipDirection="horizontal">
           <TrophyImages
-            image={this.state.trophiesJSON[0].image}
-            alt={this.state.trophiesJSON[0].alt}
-            name={this.state.trophiesJSON[0].name}
+            image={item.image}
+            alt={item.alt}
+            name={item.name}
           className="border" key="front">
             This is the front of the card.
           </TrophyImages>
@@ -47,6 +50,8 @@ class Trophy extends Component {
         </ReactCardFlip>
             <button className="border" onClick={this.handleClick}>Click to flip</button>
         </div>
+         )
+         
       )
     }
   }
