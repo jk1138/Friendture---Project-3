@@ -23,7 +23,9 @@ class App extends React.Component {
   //   googleProvider: new firebase.auth.GoogleAuthProvider(),
   // };
 
-
+// componentDidMount(){
+//   this.realSignIn();
+// }
 
   savingUsers = (userData) => {
     userAPI.saveUsers(userData).then(
@@ -88,13 +90,13 @@ class App extends React.Component {
                 ?
 
                 <div>
-                  <p>Hello, {user.displayName}</p>
+                  {/* <p>Hello, {user.displayName}</p>
                   <p>Email: {user.email}</p>
-                  <img src={user.photoURL} className="profile-img" />
-                  {/* <FriendFeed /> */}
-                  <div class="row justify-content-center">
+                  <img src={user.photoURL} className="profile-img" /> */}
+                  <FriendFeed user={user.displayName} email={user.email} image={user.photoURL}/>
+                  {/* <div class="row justify-content-center">
                             <Trophy />
-                            </div>
+                  </div> */}
                 </div>
                 
                 : <p>Please sign in.</p>
@@ -178,13 +180,26 @@ class App extends React.Component {
 
 
   // render() {
+
+  //       const {
+  //     user,
+  //     signOut,
+  //     signInWithGoogle,
+  //   } = this.props;
+
+
+    
   //   return (
   //     <div>
-  //       <FriendFeed />
+  //       <FriendFeed user={user.displayName} email={user.email} image={user.photoURL}/>
   //     </div>
 
   //   )
-  // }
+  // };
+
+
+
+
 };
 
 

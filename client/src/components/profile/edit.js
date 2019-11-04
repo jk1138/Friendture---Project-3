@@ -1,5 +1,4 @@
 import React from "react";
-import "../../style/Edit.scss";
 import CollapsePage from "../DropDown";
 
 function Edit(props) {
