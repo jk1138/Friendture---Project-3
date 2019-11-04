@@ -1,0 +1,24 @@
+[
+    {
+        "id": 1,
+        "image": "./images./gotPizzaTrophy",
+        "alt": "clipart slice of pepperoni pizza",
+        "name": "Got pizza!",
+        "check": "pizza"
+    },
+    {
+        "id": 2,
+
+        "image": "./images./selfieTrophy",
+        "alt": "clipart of 2 people in a polaroid picture with another black polaroid in the background turned slightly to the left",
+        "name": "Took a selfie together!"
+    },
+    {
+        "id": 3,
+        "image": "./images./gymTrophy",
+        "alt": "map pin with weight in th center",
+        "name": "Exercised together?? YES!"
+
+    }
+ 
+]

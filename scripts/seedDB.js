@@ -5,22 +5,41 @@ const db = require("../models");
 
 mongoose.connect(
   process.env.MONGODB_URI ||
-  "mongodb://localhost/reactreadinglist"
+  "mongodb://localhost/friendlistAppTest"
 );
 
-const bookSeed = [
+
+const userSeed = [
   {
-    title: "The Dead Zone",
-    author: "Stephen King",
-    synopsis:
-      "A number-one national best seller about a man who wakes up from a five-year coma able to see people's futures and the terrible fate awaiting mankind in The Dead Zone - a \"compulsive page-turner\" (The Atlanta Journal-Constitution). Johnny Smith awakens from a five-year coma after his car accident and discovers that he can see people's futures and pasts when he touches them. Many consider his talent a gift; Johnny feels cursed. His fiancée married another man during his coma, and people clamor for him to solve their problems. When Johnny has a disturbing vision after he shakes the hand of an ambitious and amoral politician, he must decide if he should take drastic action to change the future. The Dead Zone is a \"faultlessly paced...continuously engrossing\" (Los Angeles Times) novel of second sight.",
-    date: new Date(Date.now())
+    firstname: "Colin",
+    lastname: "McMahon",
+    fullname: "Colin McMahon",
+    email: "cmcmahon@email.email",
+    posts: [
+      {
+      title: "Went to Movies!",
+      body: "We went and saw Zombieland on Friday",
+      pic: "https://i1.wp.com/splashreport.com/wp-content/uploads/2018/05/Zombieland.jpg?fit=900%2C540",
+      date: "10/25/2019",
+      user: "CMac",
+      reactions: []
+    },
+    {
+      title: "Went Camping",
+      body: "My friends and I went to The Poconos and spent the night in the woods.",
+      pic: "https://cdn.hiconsumption.com/wp-content/uploads/2019/07/Best-Affordable-Camping-Gear-000-Hero.jpg",
+      date: "11/03/2019",
+      user: "CMac",
+      reactions: []
+    }
+  ],
+    trophies:[]
   },
 ];
 
-db.Trophy
+db.User
   .remove({})
-  .then(() => db.Trophy.collection.insertMany(trohpySeed))
+  .then(() => db.User.collection.insertMany(userSeed))
   .then(data => {
     console.log(data.result.n + " records inserted!");
     process.exit(0);

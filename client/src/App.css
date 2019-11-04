@@ -1,0 +1,67 @@
+.App {
+  text-align: center;
+}
+
+/* .container{
+  text-align: center;
+} */
+
+
+.App-header {
+  /* background-color: #282c34; */
+  min-height: 100vh;
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+  justify-content: center;
+  /* font-size: calc(10px + 2vmin); */
+  color: #282c34;
+}
+
+
+/* .App-link {
+  color: #09d3ac;
+} */
+
+
+a {
+  -webkit-tap-highlight-color: transparent;
+  text-decoration: none;
+ }
+ .button {
+  display: inline-block;
+  max-width: 300px;
+  margin-top: 0px;
+  border: 0;
+  padding: 0 18px;
+  text-align: center;
+  width: 100%;
+  height: 50px;
+  border-radius: 4px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -moz-font-feature-settings: "liga" on;
+  color: rgba(0, 0, 0, 0.84) !important;
+  fill: rgba(0, 0, 0, 0.84) !important;
+  box-shadow: 0 1px 7px rgba(0, 0, 0, 0.05);
+  font: inherit;
+  outline: none;
+ }
+ .button .svgIcon {
+  vertical-align: middle;
+  fill: rgba(0, 0, 0, 0.54) !important;
+  padding-right: 4px;
+  height: 37px;
+  display: inline-block;
+ }
+
+ .profile-img {
+   width: 90px;
+   height: auto;
+   border-radius: 50%;
+ }
+
+ .feedBackground{
+   background-image: url("https://mk0astronomynow9oh6g.kinstacdn.com/wp-content/uploads/2015/07/Aurora_Panorama_3-JROlsen_2048x995.jpg");
+   color: white;
+ }

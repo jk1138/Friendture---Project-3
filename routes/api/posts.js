@@ -2,7 +2,7 @@ const router = require("express").Router();
 const postController = require("../../controllers/postController");
 
 router.route("/")
-  .get(postController.post.findAllPosts)
+  .get(postController.findAllPosts)
   .post(postController.createPost);
 
 router
