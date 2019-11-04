@@ -21,7 +21,15 @@ const providers = {
 class App extends React.Component {
 
 
- 
+  // const firebaseAppAuth = firebaseApp.auth();
+  // const providers = {
+  //   googleProvider: new firebase.auth.GoogleAuthProvider(),
+  // };
+
+// componentDidMount(){
+//   this.realSignIn();
+// }
+
 
   savingUsers = (userData) => {
     userAPI.saveUsers(userData).then(
@@ -85,11 +93,16 @@ class App extends React.Component {
                 ? 
                 
                 <div>
-                  <p>Hello, {user.displayName}</p>
+                  {/* <p>Hello, {user.displayName}</p>
                   <p>Email: {user.email}</p>
-                  <img src={user.photoURL} className="profile-img"/>
 
-                  </div>
+                  <img src={user.photoURL} className="profile-img" /> */}
+                  <FriendFeed user={user.displayName} email={user.email} image={user.photoURL}/>
+                  {/* <div class="row justify-content-center">
+                            <Trophy />
+                  </div> */}
+                </div>
+                
 
                 : <p>Please sign in.</p>
             }
@@ -168,6 +181,7 @@ class App extends React.Component {
           <Trophy />
         </div>
 
+};
 
         {/* // import React from "react";
 
@@ -175,6 +189,7 @@ class App extends React.Component {
 
 
 // import Nav from "./components/Navbar";
+
 
 
 

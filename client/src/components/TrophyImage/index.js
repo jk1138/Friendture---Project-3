@@ -7,7 +7,7 @@ import React, { Component } from "react";
 class TrophyImages extends Component {
     render (props) {
     return (
-    <div className="card">
+    <div className="card" id={this.props.check}>
         <img src={this.props.image} className="card-img-top" alt={this.props.alt} />
             <div className="card-body">
                 <p className="card-title">{this.props.name}</p>
