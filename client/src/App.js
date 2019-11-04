@@ -1,7 +1,10 @@
 
-import FriendFeed from "./pages/Feed-Friendlist";
-import Navbar from "./components/Navbar/index.js";
+// import FriendFeed from "./pages/Feed-Friendlist";
+// import TrophyCard from "./components/TrophyList";
+
 import React from 'react';
+import Trophy from "./pages/Trophies";
+import Navbar from "./components/Navbar";
 // import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
 // import logo from './logo.svg';
 import './App.css';
@@ -10,7 +13,6 @@ import * as firebase from 'firebase/app';
 import 'firebase/auth';
 import firebaseConfig from './firebaseConfig';
 import userAPI from "./utils/userAPI";
-import Trophy from "./pages/Trophies"
 const firebaseApp = firebase.initializeApp(firebaseConfig);
 const firebaseAppAuth = firebaseApp.auth();
 const providers = {
@@ -18,12 +20,8 @@ const providers = {
 };
 class App extends React.Component {
 
-  // const firebaseAppAuth = firebaseApp.auth();
-  // const providers = {
-  //   googleProvider: new firebase.auth.GoogleAuthProvider(),
-  // };
 
-
+ 
 
   savingUsers = (userData) => {
     userAPI.saveUsers(userData).then(
@@ -37,21 +35,20 @@ class App extends React.Component {
 
     this.props.signInWithGoogle().then((res) => {
       console.log(res)
-      const email = res.additionalUserInfo.profile.email
+     const email = res.additionalUserInfo.profile.email
 
-      const userData = { email: email }
-      console.log(userData)
+     const userData = {email: email}
+     console.log(userData)
 
 
-      if (res.additionalUserInfo.isNewUser === true) {
-        this.savingUsers(userData)
-      }
-      // this.savingUsers(userData)
-
+     if (res.additionalUserInfo.isNewUser === true) {
+      this.savingUsers(userData)
+     }
+    
     })
 
   }
-
+ 
 
   gettingUsers = () => {
     userAPI.getUsers().then(
@@ -75,28 +72,25 @@ class App extends React.Component {
           <Navbar />
         </div>
         <div>
-          {/* <Trophy /> */}
+        <Trophy />
         </div>
         {/* </Router> */}
         <div className="App">
-          {/* <header className="App-header"> */}
+          <header className="App-header">
 
             {/* <img src={logo} className="App-logo" alt="logo" /> */}
             {
               user
 
-                ?
-
+                ? 
+                
                 <div>
                   <p>Hello, {user.displayName}</p>
                   <p>Email: {user.email}</p>
-                  <img src={user.photoURL} className="profile-img" />
-                  {/* <FriendFeed /> */}
-                  <div class="row justify-content-center">
-                            <Trophy />
-                            </div>
-                </div>
-                
+                  <img src={user.photoURL} className="profile-img"/>
+
+                  </div>
+
                 : <p>Please sign in.</p>
             }
             {
@@ -169,28 +163,44 @@ class App extends React.Component {
                   </div>
                 </button>
             }
-          {/* </header> */}
-          {/* <Trophy /> */}
+          </header>
+
+          <Trophy />
         </div>
+
+
+        {/* // import React from "react";
+
+// import FriendFeed from "./pages/Feed-Friendlist";
+
+
+// import Nav from "./components/Navbar";
+
+
+
+
+function App() { */}
+        {/* //   return (
+//     // <Router>
+//       <div>
+
+//         <FriendFeed/> */}
+        {/* <Switch>
+          <Route exact path="/" component={Books} />
+          <Route exact path="/books" component={Books} />
+          <Route exact path="/books/:id" component={Detail} />
+          <Route component={NoMatch} />
+        </Switch> */}
+
+
       </div>
-    )
-  };
+    );
+  }
+}
 
-
-  // render() {
-  //   return (
-  //     <div>
-  //       <FriendFeed />
-  //     </div>
-
-  //   )
-  // }
-};
-
-
-  export default withFirebaseAuth({
-    providers,
-    firebaseAppAuth,
-  })(App);
+export default withFirebaseAuth({
+  providers,
+  firebaseAppAuth,
+})(App);
 
 
