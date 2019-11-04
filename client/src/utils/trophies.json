@@ -1,24 +1,24 @@
 [
     {
         "id": 1,
-        "image": "https://us.123rf.com/450wm/yusakp/yusakp1801/yusakp180100015/92743597-stock-vector-vector-illustration-of-delicious-slice-of-pepperoni-pizza-with-melted-cheese-hand-drawn-.jpg?ver=6",
+        "image": "./images./gotPizzaTrophy",
         "alt": "clipart slice of pepperoni pizza",
         "name": "Got pizza!",
         "check": "pizza"
     },
     {
         "id": 2,
-        "image": "https://i.pinimg.com/originals/ab/dd/b8/abddb8ceb741295de5be05ea83ebf60b.png",
-        "alt": "cartoon photo of polaroid camera",
-        "name": "Took a selfie together!",
-        "check": "selfie"
+
+        "image": "./images./selfieTrophy",
+        "alt": "clipart of 2 people in a polaroid picture with another black polaroid in the background turned slightly to the left",
+        "name": "Took a selfie together!"
     },
     {
         "id": 3,
-        "image": "https://cdn.pixabay.com/photo/2016/01/12/20/39/slimming-1136637__480.png",
-        "alt": "photo of a thumbs-up made up of exercise icons",
-        "name": "Exercised together?? YES!",
-        "check": "workout"
+        "image": "./images./gymTrophy",
+        "alt": "map pin with weight in th center",
+        "name": "Exercised together?? YES!"
+
     }
  
 ]

@@ -6,6 +6,7 @@ import "./trophies.css";
 import data from "./../utils/trophies.json";
 
 class Trophy extends Component {
+
   constructor(props) {
     // const trophiesJSON = data;
     // console.log(trophiesJSON);
@@ -122,6 +123,8 @@ class Trophy extends Component {
         </div>
       </div>
     )
+
+
 
   }
 }
