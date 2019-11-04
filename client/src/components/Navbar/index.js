@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 function Nav() {
     return (
+        
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <a className="navbar-brand" href="/">Friendture</a>
             <button className="navbar-toggler" type="button" dataToggle="collapse" dataTarget="#navbarNav" ariaControls="navbarNav" ariaExpanded="false" ariaLabel="Toggle navigation">
@@ -11,13 +12,13 @@ function Nav() {
             <div className="collapse navbar-collapse" id="navbarNav">
                 <ul className="navbar-nav">
                     <li className="nav-item active">
-                        <Link className="nav-link" to="/Homepage">Home <span className="sr-only">(current)</span></Link>
+                        <a className="nav-link" href="/Homepage">Home <span className="sr-only">(current)</span></a>
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link" to="/tropies">Trophies</Link>
+                        <a className="nav-link" href="/tropies">Trophies</a>
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link" to="/userprofile">My Profile</Link>
+                        <a className="nav-link" href="/userprofile">My Profile</a>
                     </li>
                 </ul>
             </div>
