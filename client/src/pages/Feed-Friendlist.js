@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 // import Nav from "../components/Navbar/index.js";
 import postAPI from "../utils/postAPI.js";
-import CaroForm from "../components/CaroForm/index.js";
-import Trophy from "../pages/Trophies.js"
+import Trophy from "../pages/Trophies.js";
+import data from "../utils/trophies.json";
 
 class FriendFeed extends Component {
 
@@ -10,7 +10,7 @@ class FriendFeed extends Component {
         posts: [],
         title: "",
         user: "",
-        date: ""
+        trophiesJSON: data
     }
 
     componentDidMount() {
@@ -107,7 +107,7 @@ class FriendFeed extends Component {
                 {/* <Nav /> */}
 
                 <div className="jumbotron justify-content-center feedBackground">
-                    <h1 className="text-slign-left">Feed</h1>
+                    <h1>Feed</h1>
                 </div>
                 <div className="container">
                     <div className="row justify-content-center">
@@ -126,7 +126,7 @@ class FriendFeed extends Component {
                                 {/* <p>Email: {this.props.email}</p> */}
                                 <img src={this.props.image} className="profile-img" />
                             </div>
-                            <br/>
+                            <br />
                             <h3>Your Friendslist</h3>
                         </div>
                     </div>
