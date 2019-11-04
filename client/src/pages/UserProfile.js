@@ -1,8 +1,11 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
+import { connect } from 'react-redux';
 import Navbar from "../components/Navbar";
-import Edit from "../components/profile/Edit";
-// import API from "../utils/API";
-import "../style/comment.scss";
+import Edit from "../components/profile/index.js";
+import "../components/profile/style.scss";
+import API from "../utils/postAPI.js";
+
+
 
 class Profile extends Component {
 
@@ -16,56 +19,43 @@ class Profile extends Component {
     componentDidMount() {
         this.getUsername();
         this.getCommentFromUser();
-        this.handleDelay();
-    }
-
-    handleDelay() {
-        setTimeout(
-            function () {
-                this.handleFindSesh();
-                this.setState({loading: false})
-            }.bind(this),
-            3000
-        )
+        // this.attachTrophies ();
     }
 
     getUsername() {
         let user = sessionStorage.getItem('username');
-        this.setState({username: user});
+        this.setState({ username: user });
     }
 
     getCommentFromUser = (e) => {
-        if (e){
+        if (e) {
             let comment = e.target.value;
-            this.setState({comment: comment});
+            this.setState({ comment: comment });
         }
     }
 
     releaseComment = (e) => {
         e.preventDefault();
         let seshID = e.target.id;
-        this.setState({seshID: seshID});
+        this.setState({ seshID: seshID });
         API.postComment({
             username: this.state.username,
             comment: this.state.comment,
             sesh: seshID,
         })
-        .then(res=>{
-            console.log(res);
-            this.handleFindSesh();
-            this.setState({comment: ""});
-        })
-        .catch(err=>console.log(`heres the issue: ${err}`))
+            .then(res => {
+                console.log(res);
+                this.handleFindSesh();
+                this.setState({ comment: "" });
+            })
+            .catch(err => console.log(`heres the issue: ${err}`))
     }
 
-    render () { 
-        return (
-            <div className="profileHolder">
-            <Navbar page="profile" toPage={this.props.toPage}/>
-            <Edit loading={this.state.loading} userInput={this.state.comment} seshQuery={true} get={this.getCommentFromUser} release={this.releaseComment} seshResults={this.state.seshResults} />
-            </div>
+    render() {
+        return (          
+              
         )
     }
 }
-
+                                                                                                                        
 export default Profile;

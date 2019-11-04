@@ -12,8 +12,6 @@ function postForm(){
 //     const nameInput = "Colin McMahon";
 
 // });
-
-
     return(
         <form>
             <h3>Make a Post</h3>

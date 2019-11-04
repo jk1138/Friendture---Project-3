@@ -4,6 +4,7 @@ const postRoutes = require("./posts");
 const trophyRoutes = require("./trophy");
 const commentRoutes = require("./comment");
 
+
 //routes
 router.use("/users", userRoutes);
 router.use("/posts", postRoutes);

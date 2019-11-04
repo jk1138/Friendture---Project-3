@@ -10,7 +10,8 @@ import * as firebase from 'firebase/app';
 import 'firebase/auth';
 import firebaseConfig from './firebaseConfig';
 import userAPI from "./utils/userAPI";
-import Trophy from "./pages/Trophies"
+import Trophy from "./pages/Trophies";
+import UserProfile from "./pages/UserProfile.js";
 const firebaseApp = firebase.initializeApp(firebaseConfig);
 const firebaseAppAuth = firebaseApp.auth();
 const providers = {
@@ -177,14 +178,14 @@ class App extends React.Component {
   };
 
 
-  // render() {
-  //   return (
-  //     <div>
-  //       <FriendFeed />
-  //     </div>
+  render() {
+    return (
+      <div>
+        <UserProfile />
+      </div>
 
-  //   )
-  // }
+    )
+  }
 };
 
 
