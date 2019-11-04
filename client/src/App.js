@@ -1,9 +1,8 @@
 
-// import FriendFeed from "./pages/Feed-Friendlist";
-// import TrophyCard from "./components/TrophyList";
+import FriendFeed from "./pages/Feed-Friendlist";
 
 import React from 'react';
-import Trophy from "./pages/Trophies";
+// import Trophy from "./pages/Trophies";
 import Navbar from "./components/Navbar";
 // import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
 // import logo from './logo.svg';
@@ -80,7 +79,7 @@ class App extends React.Component {
           <Navbar />
         </div>
         <div>
-        <Trophy />
+        {/* <Trophy /> */}
         </div>
         {/* </Router> */}
         <div className="App">
@@ -92,7 +91,7 @@ class App extends React.Component {
 
                 ? 
                 
-                <div>
+                <div id="mainPage">
                   {/* <p>Hello, {user.displayName}</p>
                   <p>Email: {user.email}</p>
 
@@ -103,13 +102,16 @@ class App extends React.Component {
                   </div> */}
                 </div>
                 
+                
 
                 : <p>Please sign in.</p>
             }
             {
               user
 
-                ? <button onClick={signOut} href="/auth/google" class="button">
+                ? 
+
+                <button onClick={signOut} href="/auth/google" class="button">
                   <div>
                     <span class="svgIcon t-popup-svg">
                       <svg
@@ -177,37 +179,7 @@ class App extends React.Component {
                 </button>
             }
           </header>
-
-          <Trophy />
         </div>
-
-};
-
-        {/* // import React from "react";
-
-// import FriendFeed from "./pages/Feed-Friendlist";
-
-
-// import Nav from "./components/Navbar";
-
-
-
-
-
-function App() { */}
-        {/* //   return (
-//     // <Router>
-//       <div>
-
-//         <FriendFeed/> */}
-        {/* <Switch>
-          <Route exact path="/" component={Books} />
-          <Route exact path="/books" component={Books} />
-          <Route exact path="/books/:id" component={Detail} />
-          <Route component={NoMatch} />
-        </Switch> */}
-
-
       </div>
     );
   }

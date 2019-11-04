@@ -3,7 +3,9 @@ import ReactCardFlip from 'react-card-flip';
 import TrophyImages from "../components/TrophyImage";
 import TrophyEmailForm from "../components/TrophyEmailForm";
 import "./trophies.css";
-import data from "./../utils/trophies.json";
+import image1 from "../utils/images/gotPizzaTrophy.png";
+import image2 from "../utils/images/selfieTrophy.png";
+import image3 from "../utils/images/gymTrophy.png";
 
 class Trophy extends Component {
 
@@ -16,7 +18,7 @@ class Trophy extends Component {
       isFlipped1: false,
       isFlipped2: false,
       isFlipped: false,
-      trophiesJSON: data
+      // trophiesJSON: data
     };
     this.handleClick1 = this.handleClick1.bind(this);
     this.handleClick2 = this.handleClick2.bind(this);
@@ -67,8 +69,7 @@ class Trophy extends Component {
         <ReactCardFlip className="border" isFlipped={this.state.isFlipped1} flipSpeedFrontToBack={1.0}
           flipSpeedBackToFront={1.0} flipDirection="horizontal">
           <TrophyImages
-            image={"https://us.123rf.com/450wm/yusakp/yusakp1801/yusakp180100015/92743597-stock-vector-vector-illustration-of-delicious-slice-of-pepperoni-pizza-with-melted-cheese-hand-drawn-.jpg?ver=6"}
-            alt={"clipart slice of pepperoni pizza"}
+            image={image1}
             name={"Got pizza!"}
             className="border" key="front">
             This is the front of the card.
@@ -87,7 +88,7 @@ class Trophy extends Component {
           <ReactCardFlip className="border" isFlipped={this.state.isFlipped2} flipSpeedFrontToBack={1.0}
             flipSpeedBackToFront={1.0} flipDirection="horizontal">
             <TrophyImages
-              image={"https://i.pinimg.com/originals/ab/dd/b8/abddb8ceb741295de5be05ea83ebf60b.png"}
+              image={image2}
               alt={"cartoon photo of polaroid camera"}
               name={"Took a selfie together!"}
               className="border" key="front">
@@ -107,7 +108,7 @@ class Trophy extends Component {
           <ReactCardFlip className="border" isFlipped={this.state.isFlipped3} flipSpeedFrontToBack={1.0}
             flipSpeedBackToFront={1.0} flipDirection="horizontal">
             <TrophyImages
-              image={"https://cdn.pixabay.com/photo/2016/01/12/20/39/slimming-1136637__480.png"}
+              image={image3}
               alt={"photo of a thumbs-up made up of exercise icons"}
               name={"Exercised together?? YES!"}
               className="border" key="front">
