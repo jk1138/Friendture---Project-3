@@ -2,17 +2,19 @@ import React from "react";
 import postAPI from "../../utils/postAPI";
 
 
-function postForm(){
+function CaroForm() {
 
-// document.getElementById("post-button").addEventListener("click", ()=>{
-//     const titleInput = document.getElementById("input-title").value;
-//     const bodyInput = document.getElementById("input-body").value;
-//     const picInput = document.getElementById("input-pic").value;
-//     const dateInput = document.getElementById("input-date").value;
-//     const nameInput = "Colin McMahon";
+    // document.getElementById("post-button").addEventListener("click", ()=>{
+    //     const titleInput = document.getElementById("input-title").value;
+    //     const bodyInput = document.getElementById("input-body").value;
+    //     const picInput = document.getElementById("input-pic").value;
+    //     const dateInput = document.getElementById("input-date").value;
+    //     const nameInput = "Colin McMahon";
 
-// });
-    return(
+    // });
+
+
+    return (
         <form>
             <h3>Make a Post</h3>
             <div className="form-group">
@@ -33,7 +35,9 @@ function postForm(){
             </div>
             <button type="submit" class="btn btn-primary mb-2" id="post-button">Post!</button>
         </form>
+
+        
     )
 }
 
-export default postForm;
+export default CaroForm;
