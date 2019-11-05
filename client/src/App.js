@@ -10,6 +10,7 @@ import * as firebase from 'firebase/app';
 import 'firebase/auth';
 import firebaseConfig from './firebaseConfig';
 import userAPI from "./utils/userAPI";
+import VerticalFlip from "./pages/Trophies";
 import Trophy from "./pages/Trophies"
 const firebaseApp = firebase.initializeApp(firebaseConfig);
 const firebaseAppAuth = firebaseApp.auth();

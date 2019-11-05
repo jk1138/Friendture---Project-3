@@ -33,8 +33,7 @@ class Trophy extends Component {
       this.state.trophiesJSON.map(
         item =>  <div className="border addMargin">
            
-        <ReactCardFlip className="border" isFlipped={this.state.isFlipped} flipSpeedFrontToBack={1.0}
-      flipSpeedBackToFront={1.0} flipDirection="horizontal">
+        <ReactCardFlip className="border" isFlipped={this.state.isFlipped} flipDirection="horizontal">
           <TrophyImages
             image={item.image}
             alt={item.alt}
@@ -43,7 +42,7 @@ class Trophy extends Component {
             This is the front of the card.
           </TrophyImages>
    
-          <TrophyEmailForm className="border" key="back"
+          <TrophyEmailForm name={item.name} className="border" key="back"
           >
             This is the back of the card.
           </TrophyEmailForm>
