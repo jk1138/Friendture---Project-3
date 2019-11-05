@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 // import Nav from "../components/Navbar/index.js";
 import postAPI from "../utils/postAPI.js";
-import PostForm from "../components/PostForm/index.js";
+import Trophy from "../pages/Trophies.js";
+import data from "../utils/trophies.json";
 
 class FriendFeed extends Component {
 
@@ -9,7 +10,7 @@ class FriendFeed extends Component {
         posts: [],
         title: "",
         user: "",
-        date: ""
+        trophiesJSON: data
     }
 
     componentDidMount() {
@@ -90,7 +91,7 @@ class FriendFeed extends Component {
             friendLine.textContent = user;
             friendLine.appendChild(friendSpan);
 
-            
+
 
 
             const list = document.getElementById("friend-list");
@@ -110,11 +111,24 @@ class FriendFeed extends Component {
                 </div>
                 <div className="container">
                     <div className="row justify-content-center">
-                        <div className="col-md-3"><PostForm/></div>
+                        <div className="col-md-3">
+                            <h3>Have you done these recently?</h3>
+                            <div class="row justify-content-center">
+                                <Trophy />
+                            </div>
+                        </div>
 
                         <div className="col-md-6" id="theFeed"><h2>What's Happening on Friendture:</h2></div>
 
-                        <div className="col-md-3" id="friend-list"><h3>Friendslist</h3></div>
+                        <div className="col-md-3" id="friend-list">
+                            <div>
+                                <h3>Hello, {this.props.user}</h3>
+                                {/* <p>Email: {this.props.email}</p> */}
+                                <img src={this.props.image} className="profile-img" />
+                            </div>
+                            <br />
+                            <h3>Your Friendslist</h3>
+                        </div>
                     </div>
                 </div>
             </div>
