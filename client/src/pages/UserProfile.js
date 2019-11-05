@@ -1,8 +1,9 @@
 import React, {Component} from "react";
 import Navbar from "../components/Navbar";
-import Edit from "../components/profile/Edit";
+import Form from "../components/profile/ProfileForm.js";
+
 // import API from "../utils/API";
-import "../style/comment.scss";
+
 
 class Profile extends Component {
 
@@ -16,17 +17,7 @@ class Profile extends Component {
     componentDidMount() {
         this.getUsername();
         this.getCommentFromUser();
-        this.handleDelay();
-    }
 
-    handleDelay() {
-        setTimeout(
-            function () {
-                this.handleFindSesh();
-                this.setState({loading: false})
-            }.bind(this),
-            3000
-        )
     }
 
     getUsername() {
@@ -41,28 +32,16 @@ class Profile extends Component {
         }
     }
 
-    releaseComment = (e) => {
-        e.preventDefault();
-        let seshID = e.target.id;
-        this.setState({seshID: seshID});
-        API.postComment({
-            username: this.state.username,
-            comment: this.state.comment,
-            sesh: seshID,
-        })
-        .then(res=>{
-            console.log(res);
-            this.handleFindSesh();
-            this.setState({comment: ""});
-        })
-        .catch(err=>console.log(`heres the issue: ${err}`))
-    }
 
     render () { 
         return (
-            <div className="profileHolder">
-            <Navbar page="profile" toPage={this.props.toPage}/>
-            <Edit loading={this.state.loading} userInput={this.state.comment} seshQuery={true} get={this.getCommentFromUser} release={this.releaseComment} seshResults={this.state.seshResults} />
+            <div>
+            <Navbar/>
+            <div class= "container">
+                < div className="profileHolder">
+                    <Form/>
+                </div>
+            </div>
             </div>
         )
     }
