@@ -1,6 +1,7 @@
 .border {
-    border-color: red !important;
-    width: 300px;
+    border: #1E6994 solid !important;
+    width: 200px;
+    margin: auto;
   }
 
   .row {
@@ -11,5 +12,10 @@
   
 
   .addMargin {
-    margin: 5px;
+    margin: 10px;
+    margin-right: 10px;
+  }
+
+  .img {
+    margin-top: 10px;
   }
