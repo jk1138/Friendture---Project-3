@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import Navbar from "../components/Navbar";
 import RenderedProfile from "../components/profile/renderedProfile.js";
 import ProfileForm from "../components/profile/ProfileForm.js";
-import Trophies from "./Trophies.js" 
+import Trophies from "./Trophies.js"
 
 // import API from "../utils/API";
 
@@ -35,17 +35,19 @@ class Profile extends Component {
     }
 
 
-    render () { 
+    render() {
         return (
             <div>
                 < div className="profileFormHolder">
-                    <ProfileForm />
-                    <RenderedProfile />
-                    < Trophies />
+                    {/* <ProfileForm /> */}
+                    <div className="row justify-content-center">
+                        < RenderedProfile name={this.props.name} image={this.props.image}/>
+                    </div>
+            
                 </div>
             </div>
         )
     }
 }
-                                                                                                                        
+
 export default Profile;
