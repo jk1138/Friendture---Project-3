@@ -11,19 +11,19 @@
 
         "image": "https://user-images.githubusercontent.com/34314840/68158130-01bfeb00-ff1d-11e9-94af-4fd584001af7.png",
         "alt": "clipart of 2 people in a polaroid picture with another black polaroid in the background turned slightly to the left",
-        "name": "Took a selfie together!"
+        "name": "Took a selfie!"
     },
     {
         "id": 3,
         "image": "./images./gymTrophy",
         "alt": "map pin with weight in th center",
-        "name": "Exercised together?? YES!"
+        "name": "Went to the gym!"
     },
     {
         "id": 4,
         "image": "./images./campingTrophy",
         "alt": "clipart yellow tent",
-        "name": "Went on the coolest camping trip!"
+        "name": "Camping trip!"
     },
     {
         "id": 5,
@@ -35,6 +35,6 @@
         "id": 6,
         "image": "./images./roadTripTrophy",
         "alt": "clipart of a camper",
-        "name": "Saw some sights on a road trip!"
+        "name": "Saw some sights!!"
     }
 ]
