@@ -118,17 +118,17 @@ class App extends React.Component {
                 </div>
 
 
-
-
                 : <p>Please sign in.</p> 
+
 
             }
             {
               user
 
                 ?
-
+   
                 <button onClick={signOut} href="/auth/google" class="button">
+                  
                   <div>
                     <span class="svgIcon t-popup-svg">
                       <svg
@@ -160,12 +160,14 @@ class App extends React.Component {
                     <span class="button-label">Sign Out</span>
                   </div>
                 </button>
-
-                :  <button onClick={this.realSignIn} href="/auth/google" class="button">
-
-
+                
+                : <div> 
+                    <div>
+                      <LandingPage /> 
+                    </div>
+                    
+                  <button onClick={this.realSignIn} href="/auth/google" class="button">
                   <div>
-
                     <span class="svgIcon t-popup-svg">
                       <svg
                         class="svgIcon-use"
@@ -194,12 +196,12 @@ class App extends React.Component {
                       </svg>
                     </span>
                     <span class="button-label">Sign in with Google</span>
+
                   </div>
                 </button>
-              
+              </div>
             }
           </header>
-          <div><LandingPage /></div>
         </div>
   
       </div>
