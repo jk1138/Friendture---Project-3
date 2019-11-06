@@ -5,17 +5,39 @@ import Trophy from "../pages/Trophies.js";
 import data from "../utils/trophies.json";
 import '../App.css';
 
+import image1 from "../utils/images/gotPizzaTrophy.png";
+import image2 from "../utils/images/selfieTrophy.png";
+import image3 from "../utils/images/gymTrophy.png";
+import image4 from "../utils/images/campingTrophy.png";
+import image5 from "../utils/images/moviesTrophy.png";
+import image6 from "../utils/images/roadTripTrophy.png";
+import image1a from "../utils/images/greyPizzaTrophy.png";
+import image2a from "../utils/images/greySelfieTrophy.png";
+import image3a from "../utils/images/greyGymTrophy.png";
+import image4a from "../utils/images/greyCampingTrophy.png";
+import image5a from "../utils/images/greyMovieTrophy.png";
+import image6a from "../utils/images/greyRoadTripTrophy.png";
+
 class FriendFeed extends Component {
 
     state = {
-        posts: [],
+        users: [],
         title: "",
         user: "",
-        trophiesJSON: data
+        trophiesJSON: data,
+        uTrophs: [],
+
+        pizzaIMG: image1a,
+        selfieIMG: image2a,
+        gymIMG: image3a,
+        campingIMG: image4a,
+        movieIMG: image5a,
+        tripIMG: image6a
     }
 
     componentDidMount() {
         this.gettingPosts();
+        
 
     }
 
@@ -24,7 +46,7 @@ class FriendFeed extends Component {
             (res) => {
                 console.log(res);
                 this.setState({
-                    posts: res.data, title: "", user: "", date: ""
+                    users: res.data, title: "", user: "", date: ""
                 });
                 this.renderPosts();
             }
@@ -37,16 +59,38 @@ class FriendFeed extends Component {
     };
 
     renderPosts = () => {
-        console.log(this.state.posts);
+        console.log(this.state.users);
 
-        const thePosts = this.state.posts;
+        const theUsers = this.state.users;
 
         const theFeed = document.getElementById("theFeed");
 
-        for (let i = 0; i < thePosts.length; i++) {
+        for (let i = 0; i < theUsers.length; i++) {
 
-            let userPosts = thePosts[i].posts;
-            let user = thePosts[i].fullname;
+            let userPosts = theUsers[i].posts;
+            let user = theUsers[i].fullname;
+
+            if(this.props.name === theUsers[i].fullname){
+                this.setState({uTrophs: theUsers[i].trophies});
+                console.log("feed state: " + this.state.uTrophs)
+            };
+
+            for(let i = 0; i < this.state.uTrophs.length; i++){
+                if (this.state.uTrophs[i] === "pizza") {
+                    this.setState({ pizzaIMG: image1 });
+                  } else if (this.state.uTrophs[i] === "selfie") {
+                    this.setState({ selfieIMG: image2 });
+                  } else if (this.state.uTrophs[i] === "gym") {
+                    this.setState({ gymIMG: image3 });
+                  } else if (this.state.uTrophs[i] === "camping") {
+                    this.setState({ campingIMG: image4 });
+                  } else if (this.state.uTrophs[i] === "movie") {
+                    this.setState({ movieIMG: image5 });
+                  } else if (this.state.uTrophs[i] === "trip") {
+                    this.setState({ tripIMG: image6 });
+                  }
+            }
+            
 
             for (let j = 0; j < userPosts.length; j++) {
 
@@ -115,7 +159,7 @@ class FriendFeed extends Component {
                         <div className="col-md-3">
                             <h3>Have you done these recently?</h3>
                             <div class="row justify-content-center">
-                                <Trophy email={this.props.email}/>
+                                <Trophy email={this.props.email} pizza={this.state.pizzaIMG} selfie={this.state.selfieIMG} gym={this.state.gymIMG} camping={this.state.campingIMG} movie={this.state.movieIMG} trip={this.state.tripIMG}/>
                             </div>
                         </div>
 
