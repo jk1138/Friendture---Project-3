@@ -1,4 +1,15 @@
 .writing{
     background-color: #282C34;
-    
+
+}
+.display-4{
+    font-weight: bold;
+}
+#lastimage{
+    opacity: 70%;
+    border-radius: 90px;
+}
+.card-img-top{
+    opacity: 90%;
+    border-radius: 40px;
 }
