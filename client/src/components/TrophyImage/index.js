@@ -7,6 +7,7 @@ import React, { Component } from "react";
 class TrophyImages extends Component {
     render (props) {
     return (
+    <div class= "card-deck"> 
     <div className="card" id={this.props.check}>
         <img src={this.props.image} className="card-img-top" alt={this.props.alt} />
             <div className="card-body">
@@ -15,6 +16,7 @@ class TrophyImages extends Component {
                 {/* <a href="#" className="btn btn-primary">Go somewhere</a> */}
             </div>
 
+    </div>
     </div>
     )
     }

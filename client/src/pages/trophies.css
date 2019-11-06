@@ -1,7 +1,9 @@
 .border {
     border: #1E6994 solid !important;
     width: 200px;
+    height: 350px;
     margin: auto;
+    border-radius: 10px;
   }
 
   .row {
@@ -19,3 +21,8 @@
   .img {
     margin-top: 10px;
   }
+
+.card {
+  display: flex;
+  border: none;
+}
