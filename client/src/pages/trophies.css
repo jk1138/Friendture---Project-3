@@ -15,7 +15,7 @@
 
   .addMargin {
     margin: 10px;
-    margin-right: 10px;
+
   }
 
   .img {
@@ -24,5 +24,6 @@
 
 .card {
   display: flex;
+ 
   border: none;
 }

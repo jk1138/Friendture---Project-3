@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import postAPI from "../utils/postAPI.js";
 import Trophy from "../pages/Trophies.js";
 import data from "../utils/trophies.json";
+import '../App.css';
 
 class FriendFeed extends Component {
 
