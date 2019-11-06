@@ -1,10 +1,12 @@
 
 import FriendFeed from "./pages/Feed-Friendlist";
+import UserProfile from "./pages/UserProfile.js";
 
 import React from 'react';
-// import Trophy from "./pages/Trophies";
+import Trophy from "./pages/Trophies";
+// import UserProfile from "./pages/UserProfile";
 import Navbar from "./components/Navbar";
-// import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
+import { Route, Switch, BrowserRouter as Router } from 'react-router-dom'
 // import logo from './logo.svg';
 import './App.css';
 import withFirebaseAuth from 'react-with-firebase-auth'
@@ -12,6 +14,7 @@ import * as firebase from 'firebase/app';
 import 'firebase/auth';
 import firebaseConfig from './firebaseConfig';
 import userAPI from "./utils/userAPI";
+
 const firebaseApp = firebase.initializeApp(firebaseConfig);
 const firebaseAppAuth = firebaseApp.auth();
 const providers = {
@@ -25,9 +28,9 @@ class App extends React.Component {
   //   googleProvider: new firebase.auth.GoogleAuthProvider(),
   // };
 
-// componentDidMount(){
-//   this.realSignIn();
-// }
+  // componentDidMount(){
+  //   this.realSignIn();
+  // }
 
 
   savingUsers = (userData) => {
@@ -42,20 +45,20 @@ class App extends React.Component {
 
     this.props.signInWithGoogle().then((res) => {
       console.log(res)
-     const email = res.additionalUserInfo.profile.email
+      const email = res.additionalUserInfo.profile.email
 
-     const userData = {email: email}
-     console.log(userData)
+      const userData = { email: email }
+      console.log(userData)
 
 
-     if (res.additionalUserInfo.isNewUser === true) {
-      this.savingUsers(userData)
-     }
-    
+      if (res.additionalUserInfo.isNewUser === true) {
+        this.savingUsers(userData)
+      }
+
     })
 
   }
- 
+
 
   gettingUsers = () => {
     userAPI.getUsers().then(
@@ -72,6 +75,7 @@ class App extends React.Component {
       signInWithGoogle,
     } = this.props;
 
+
     return (
       <div>
         {/* <Router> */}
@@ -79,7 +83,7 @@ class App extends React.Component {
           <Navbar />
         </div>
         <div>
-        {/* <Trophy /> */}
+          {/* <Trophy /> */}
         </div>
         {/* </Router> */}
         <div className="App">
@@ -89,27 +93,31 @@ class App extends React.Component {
             {
               user
 
-                ? 
-                
-                <div id="mainPage">
-                  {/* <p>Hello, {user.displayName}</p>
-                  <p>Email: {user.email}</p>
+                ?
 
-                  <img src={user.photoURL} className="profile-img" /> */}
-                  <FriendFeed user={user.displayName} email={user.email} image={user.photoURL}/>
-                  {/* <div class="row justify-content-center">
-                            <Trophy />
-                  </div> */}
+                <div id="mainPage">
+                  <Router>
+                    <div>
+                      <Switch>
+                        <Route exact path="/" render={()=><FriendFeed name={user.displayName} image={user.photoURL}/>} />
+                        <Route exact path="/trophies" render={()=><Trophy />} />
+                        <Route exact path="/myprofile" render={()=><UserProfile />}Component={UserProfile}/> 
+                      </Switch>
+                    </div>
+                  </Router>
+
+                  {/* <FriendFeed name={user.displayName} image={user.photoURL}/> */}
+
                 </div>
-                
-                
+
+
 
                 : <p>Please sign in.</p>
             }
             {
               user
 
-                ? 
+                ?
 
                 <button onClick={signOut} href="/auth/google" class="button">
                   <div>
@@ -181,6 +189,7 @@ class App extends React.Component {
           </header>
         </div>
       </div>
+
     );
   }
 }
