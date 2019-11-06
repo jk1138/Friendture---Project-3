@@ -115,7 +115,7 @@ class FriendFeed extends Component {
                         <div className="col-md-3">
                             <h3>Have you done these recently?</h3>
                             <div class="row justify-content-center">
-                                <Trophy />
+                                <Trophy email={this.props.email}/>
                             </div>
                         </div>
 

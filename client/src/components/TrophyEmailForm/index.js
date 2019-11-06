@@ -7,10 +7,12 @@ class TrophyEmailForm extends Component {
 
   state = {
 
+
     //  email: ""
     //   friendEmail: "",
     //   description: "",
     //   photoURL: ""
+
   };
 
 
@@ -36,7 +38,13 @@ class TrophyEmailForm extends Component {
       ${this.state.friendEmail}
       ${this.state.description}
       ${this.state.photoURL}`
+
     )
+
+    );
+
+    this.updateUsers(this.state.userEmail, this.state);
+
 
     this.setState({
       email: "",
@@ -46,11 +54,13 @@ class TrophyEmailForm extends Component {
     });
 
 
+
   };
 
-  updateUsers = (userData) => {
-    userAPI.updateUsers(userData).then(
+  updateUsers = (email, postData) => {
+    userAPI.updateUsers(email, postData).then(
       (res) => {
+        console.log("Hello from the form update")
         console.log(res);
       }
     ).catch(err => console.log(err))
@@ -68,9 +78,8 @@ class TrophyEmailForm extends Component {
 
 
     //   this.updateUsers(this.props.name)
+
     }
-
-
 
     render() {
       return (
@@ -119,6 +128,8 @@ class TrophyEmailForm extends Component {
 
       )
     }
+
   }
+
 
 export default TrophyEmailForm;

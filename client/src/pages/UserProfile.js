@@ -41,7 +41,7 @@ class Profile extends Component {
                 < div className="profileFormHolder">
                     {/* <ProfileForm /> */}
                     <div className="row justify-content-center">
-                        < RenderedProfile name={this.props.name} image={this.props.image}/>
+                        < RenderedProfile name={this.props.name} image={this.props.image} email={this.props.email}/>
                     </div>
             
                 </div>

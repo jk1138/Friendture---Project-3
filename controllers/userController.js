@@ -12,6 +12,11 @@ const userController = {
       .then(dbUser => res.json(dbUser))
       .catch(err => res.status(422).json(err));
   },
+  findUserByEmail: function (req, res) {
+    db.User.findOne({ email: req.params.email })
+      .then(dbUser => res.json(dbUser))
+      .catch(err => res.status(422).json(err));
+  },
   createUser: function (req, res) {
     console.log("hello world");
     db.User.create(req.body)
@@ -19,7 +24,7 @@ const userController = {
       .catch(err => res.status(422).json(err));
   },
   updateUser: function (req, res) {
-    db.User.findOneAndUpdate({ _id: req.params.id }, req.body)
+    db.User.findOneAndUpdate({ email: req.query.email }, {$push: {posts:req.body}})
       .then(dbUser => res.json(dbUser))
       .catch(err => res.status(422).json(err));
   },
