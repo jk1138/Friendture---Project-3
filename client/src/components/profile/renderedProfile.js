@@ -14,7 +14,7 @@ class renderedProfile extends Component {
                 <div class="media row justify-content-around">
                     <img src="..." class="align-self-center mr-3" alt="..."></img>
                     <div className="col-md-2">
-                        <h4>Trohphies</h4>
+                        <h4>Trophhies</h4>
                         <Trophy />
                     </div>
                     <div class="media-body col-md-8">
