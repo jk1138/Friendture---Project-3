@@ -10,11 +10,17 @@ class ProfileForm extends Component {
       }
     ).catch(err => console.log(err))
   }
+   hideForm = () => {  
+    // to hide 
+    var form = document.getElementById('UserProfileInfo');
+    form.style.display = 'none';
+  };
 
 onSubmit = (e) => {
   e.preventDefault();
-  
+  this.hideForm ();
 }
+
   render () {
     return (
       <div class="container">
@@ -42,7 +48,7 @@ onSubmit = (e) => {
     <label for="photoURL">Photo URL</label>
     <input type="text" class="form-control" id="photoURL" placeholder="Link to your photo"/>
   </div>
-  <button name="Got Pizza" type="submit" class="btn btn-primary" onClick={this.onSubmit}>Submit</button>
+  <button name="UserProfileInfo" type="submit" class="btn btn-primary" onClick={this.onSubmit}>Submit</button>
 </form>
 </div>
 </div>

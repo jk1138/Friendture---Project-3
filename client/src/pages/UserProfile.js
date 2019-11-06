@@ -1,6 +1,9 @@
 import React, {Component} from "react";
 import Navbar from "../components/Navbar";
 import Form from "../components/profile/ProfileForm.js";
+import RenderedProfile from "../components/profile/renderedProfile.js";
+import ProfileForm from "../components/profile/ProfileForm.js";
+import Trophies from "./Trophies.js" 
 
 // import API from "../utils/API";
 
@@ -11,7 +14,7 @@ class Profile extends Component {
     state = {
         username: null,
         comment: "",
-        loading: true
+
     }
 
     componentDidMount() {
@@ -36,12 +39,12 @@ class Profile extends Component {
     render () { 
         return (
             <div>
-            <Navbar/>
-            <div class= "container">
-                < div className="profileHolder">
-                    <Form/>
+             <Navbar/>
+                < div className="profileFormHolder">
+                    <ProfileForm />
+                    <RenderedProfile />
+                    < Trophies />
                 </div>
-            </div>
             </div>
         )
     }
