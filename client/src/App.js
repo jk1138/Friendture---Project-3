@@ -6,6 +6,7 @@ import React from 'react';
 import Trophy from "./pages/Trophies";
 // import UserProfile from "./pages/UserProfile";
 import Navbar from "./components/Navbar";
+import LandingPage from "./components/LandingPage/index.js";
 import { Route, Switch, BrowserRouter as Router } from 'react-router-dom'
 // import logo from './logo.svg';
 import './App.css';
@@ -116,7 +117,11 @@ class App extends React.Component {
                   </Router>
                 </div>
 
-                : <p>Please sign in.</p>
+
+
+
+                : <p>Please sign in.</p> 
+
             }
             {
               user
@@ -156,11 +161,11 @@ class App extends React.Component {
                   </div>
                 </button>
 
-                : <button onClick={this.realSignIn} href="/auth/google" class="button">
-                  
-        
+                :  <button onClick={this.realSignIn} href="/auth/google" class="button">
+
 
                   <div>
+
                     <span class="svgIcon t-popup-svg">
                       <svg
                         class="svgIcon-use"
@@ -191,9 +196,12 @@ class App extends React.Component {
                     <span class="button-label">Sign in with Google</span>
                   </div>
                 </button>
+              
             }
           </header>
+          <div><LandingPage /></div>
         </div>
+  
       </div>
 
     );
