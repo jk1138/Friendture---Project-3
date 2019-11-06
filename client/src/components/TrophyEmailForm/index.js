@@ -5,6 +5,43 @@ import "../../pages/trophies.css";
 
 class TrophyEmailForm extends Component {
 
+  state = {
+   email: "",
+    friendEmail: "",
+    description: "",
+    photoURL: ""
+  };
+
+
+  handleInputChange = event => {
+    // Getting the value and name of the input which triggered the change
+    let value = event.target.value;
+    const email = event.target.email;
+    const friendEmail = event.target.friendEmail;
+    const description = event.target.description;
+    const photoURL = event.target.photoURL;
+    this.setState({value: event.target.value});
+    // Updating the input's state
+    this.setState({
+      // [email,friendEmail,description,photoURL]: value
+    });
+  };
+
+  handleFormSubmit = event => {
+    // Preventing the default behavior of the form submit (which is to refresh the page)
+    event.preventDefault();
+  
+      alert(`Hello ${this.state.email} ${this.state.friendEmail} ${this.state.description} ${this.state.photoURL}`)
+
+    this.setState({
+      email: "",
+      friendEmail: "",
+      description: "",
+      photoURL: ""
+    });
+
+  };
+
   updateUsers = (userData) => {
     userAPI.updateUsers(userData).then(
       (res) => {
@@ -14,16 +51,12 @@ class TrophyEmailForm extends Component {
   }
 
 
+// onSubmit = (e) => {
+//   e.preventDefault();
+//   alert(this.props.name)
 
-
-
-
-onSubmit = (e) => {
-  e.preventDefault();
-  
-
-
-}
+//   this.updateUsers(this.props.name)
+// }
 
 
 
