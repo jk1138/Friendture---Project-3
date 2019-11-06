@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import userAPI from "../../utils/userAPI";
 import "../../pages/trophies.css";
 // back of card
@@ -6,6 +6,7 @@ import "../../pages/trophies.css";
 class TrophyEmailForm extends Component {
 
   state = {
+
   //  email: ""
   //   friendEmail: "",
   //   description: "",
@@ -44,6 +45,7 @@ class TrophyEmailForm extends Component {
       photoURL: ""
     });
 
+
   };
 
   updateUsers = (userData) => {
@@ -54,10 +56,16 @@ class TrophyEmailForm extends Component {
     ).catch(err => console.log(err))
   }
 
+  onSubmit = (e) => {
+    e.preventDefault();
+    // if (this.state.yourEmail && this.state.friendEmail) {
+    //   userAPI.
+    // }
 
 // onSubmit = (e) => {
 //   e.preventDefault();
 //   alert(this.props.name)
+
 
 //   this.updateUsers(this.props.name)
 // }
@@ -108,8 +116,9 @@ class TrophyEmailForm extends Component {
 </form>
 </div>
 </div>
+
     )
   }
 }
-        
+
 export default TrophyEmailForm;
