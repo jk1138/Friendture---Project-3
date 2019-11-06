@@ -15,6 +15,7 @@ class renderedProfile extends Component {
                     <img src="..." class="align-self-center mr-3" alt="..."></img>
                     
                     <div class="media-body col-md-12">
+
                         <h5>{this.props.name}</h5>
                         <img src={this.props.image} className="profile-img" />
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
