@@ -3,12 +3,6 @@ import ReactCardFlip from 'react-card-flip';
 import TrophyImages from "../components/TrophyImage";
 import TrophyEmailForm from "../components/TrophyEmailForm";
 import "./trophies.css";
-import image1 from "../utils/images/gotPizzaTrophy.png";
-import image2 from "../utils/images/selfieTrophy.png";
-import image3 from "../utils/images/gymTrophy.png";
-import image4 from "../utils/images/campingTrophy.png";
-import image5 from "../utils/images/moviesTrophy.png";
-import image6 from "../utils/images/roadTripTrophy.png";
 
 class Trophy extends Component {
 
@@ -18,10 +12,10 @@ class Trophy extends Component {
     // console.log(trophiesJSON[0].image);
     super(props);
     this.state = {
+      users: [],
       isFlipped1: false,
       isFlipped2: false,
-      isFlipped: false,
-      // trophiesJSON: data
+      isFlipped: false
     };
     this.handleClick1 = this.handleClick1.bind(this);
     this.handleClick2 = this.handleClick2.bind(this);
@@ -30,8 +24,7 @@ class Trophy extends Component {
     this.handleClick5 = this.handleClick5.bind(this);
     this.handleClick6 = this.handleClick6.bind(this);
 
-  }
-
+  };
 
   handleClick1(e) {
     e.preventDefault();
@@ -103,13 +96,13 @@ class Trophy extends Component {
           <ReactCardFlip className="border" isFlipped={this.state.isFlipped1} flipSpeedFrontToBack={1.0}
             flipSpeedBackToFront={1.0} flipDirection="horizontal">
             <TrophyImages className="img"
-              image={image1}
+              image={this.props.pizza}
               name={"Got pizza!"}
               className="border" key="front">
               This is the front of the card.
           </TrophyImages>
 
-          <TrophyEmailForm className="border" key="back">
+            <TrophyEmailForm className="border" key="back">
               This is the back of the card.
           </TrophyEmailForm>
           </ReactCardFlip>
@@ -123,7 +116,7 @@ class Trophy extends Component {
           <ReactCardFlip isFlipped={this.state.isFlipped2} flipSpeedFrontToBack={1.0}
             flipSpeedBackToFront={1.0} flipDirection="horizontal">
             <TrophyImages className="img"
-              image={image2}
+              image={this.props.selfie}
               alt={"cartoon photo of polaroid camera"}
               name={"Took a selfie!"}
               className="border" key="front">
@@ -146,7 +139,7 @@ class Trophy extends Component {
           <ReactCardFlip className="border" isFlipped={this.state.isFlipped3} flipSpeedFrontToBack={1.0}
             flipSpeedBackToFront={1.0} flipDirection="horizontal">
             <TrophyImages
-              image={image3}
+              image={this.props.gym}
               alt={"photo of a thumbs-up made up of exercise icons"}
               name={"Went to the gym!"}
               className="border" key="front">
@@ -168,7 +161,7 @@ class Trophy extends Component {
           <ReactCardFlip className="border" isFlipped={this.state.isFlipped4} flipSpeedFrontToBack={1.0}
             flipSpeedBackToFront={1.0} flipDirection="horizontal">
             <TrophyImages
-              image={image4}
+              image={this.props.camping}
               alt={"clipart of yellow tent"}
               name={"Camping trip!"}
               className="border" key="front">
@@ -190,7 +183,7 @@ class Trophy extends Component {
           <ReactCardFlip className="border" isFlipped={this.state.isFlipped5} flipSpeedFrontToBack={1.0}
             flipSpeedBackToFront={1.0} flipDirection="horizontal">
             <TrophyImages
-              image={image5}
+              image={this.props.movie}
               alt={"clipart of 2 movie tickets"}
               name={"Saw a movie!!"}
               className="border" key="front">
@@ -213,7 +206,7 @@ class Trophy extends Component {
           <ReactCardFlip className="border" isFlipped={this.state.isFlipped6} flipSpeedFrontToBack={1.0}
             flipSpeedBackToFront={1.0} flipDirection="horizontal">
             <TrophyImages
-              image={image6}
+              image={this.props.trip}
               alt={"clipart of a camper"}
               name={"Saw some sights!"}
               className="border" key="front">
