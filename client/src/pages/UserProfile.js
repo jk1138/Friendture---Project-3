@@ -38,7 +38,6 @@ class Profile extends Component {
     render () { 
         return (
             <div>
-             <Navbar/>
                 < div className="profileFormHolder">
                     <ProfileForm />
                     <RenderedProfile />

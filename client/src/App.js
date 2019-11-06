@@ -101,7 +101,7 @@ class App extends React.Component {
                       <Switch>
                         <Route exact path="/" render={()=><FriendFeed name={user.displayName} image={user.photoURL}/>} />
                         <Route exact path="/trophies" render={()=><Trophy />} />
-                        {/* <Route exact path="/myprofile" Component={UserProfile}/> */}
+                        <Route exact path="/myprofile" render={()=><UserProfile />}Component={UserProfile}/> 
                       </Switch>
                     </div>
                   </Router>
