@@ -7,10 +7,10 @@ class TrophyEmailForm extends Component {
 
   state = {
 
-  //  email: ""
-  //   friendEmail: "",
-  //   description: "",
-  //   photoURL: ""
+   email: "",
+    friendEmail: "",
+    description: "",
+    photoURL: ""
   };
 
 
@@ -67,8 +67,8 @@ class TrophyEmailForm extends Component {
 //   alert(this.props.name)
 
 
-//   this.updateUsers(this.props.name)
-// }
+  // this.updateUsers(this.props.name)
+}
 
 
 
