@@ -1,7 +1,5 @@
 import React, { Component } from "react";
-
-
-
+import "../../pages/trophies.css"
 // front of card
 
 class TrophyImages extends Component {

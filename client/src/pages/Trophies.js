@@ -125,7 +125,7 @@ class Trophy extends Component {
             <TrophyImages className="img"
               image={image2}
               alt={"cartoon photo of polaroid camera"}
-              name={"Took a selfie together!"}
+              name={"Took a selfie!"}
               className="border" key="front">
               This is the front of the card.
           </TrophyImages>
@@ -148,7 +148,7 @@ class Trophy extends Component {
             <TrophyImages
               image={image3}
               alt={"photo of a thumbs-up made up of exercise icons"}
-              name={"Exercised together?? YES!"}
+              name={"Went to the gym!"}
               className="border" key="front">
               This is the front of the card.
           </TrophyImages>
@@ -170,7 +170,7 @@ class Trophy extends Component {
             <TrophyImages
               image={image4}
               alt={"clipart of yellow tent"}
-              name={"Went on the coolest camping trip!"}
+              name={"Camping trip!"}
               className="border" key="front">
               This is the front of the card.
           </TrophyImages>
@@ -215,7 +215,7 @@ class Trophy extends Component {
             <TrophyImages
               image={image6}
               alt={"clipart of a camper"}
-              name={"Saw some sights on a road trip!"}
+              name={"Saw some sights!"}
               className="border" key="front">
               This is the front of the card.
           </TrophyImages>

@@ -1,8 +1,8 @@
 .border {
-    border: #1E6994 solid !important;
+    border: #1E6994 solid 5px !important;
     width: 200px;
     height: auto;
-    margin: auto;
+   margin-top: 10px;
     border-radius: 10px;
   }
   
@@ -10,15 +10,14 @@
     display: flex; 
     flex-wrap: wrap ; 
     padding: 0 1px 
-  } 
+  }  
   
-  
-  .addMargin {
+  /* .addMargin {
     margin: 10px;
     
-  }
+  } */
   
-  .img {
+  img {
     margin-top: 10px;
   }
   
