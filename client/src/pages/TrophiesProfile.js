@@ -97,8 +97,9 @@ class Trophy extends Component {
   render() {
     return (
       <div>
+         <div class = "card-deck"> 
         {/* Start Pizza !!!! */}
-
+        <div class= "card">
         <div className="border addMargin">
           <ReactCardFlip className="border" isFlipped={this.state.isFlipped1} flipSpeedFrontToBack={1.0}
             flipSpeedBackToFront={1.0} flipDirection="horizontal">
@@ -115,10 +116,11 @@ class Trophy extends Component {
           </ReactCardFlip>
           <button onClick={this.handleClick1} id="pizza">Fill out trophy form</button>
         </div>
-
+        </div>
         {/* End Pizza !!!! */}
 
         {/* Start Selfie!!!! */}
+        <div class = "card">
         <div className="border addMargin">
           <ReactCardFlip isFlipped={this.state.isFlipped2} flipSpeedFrontToBack={1.0}
             flipSpeedBackToFront={1.0} flipDirection="horizontal">
@@ -137,11 +139,11 @@ class Trophy extends Component {
           </ReactCardFlip>
           <button onClick={this.handleClick2}>Click to flip</button>
         </div>
-
+        </div>
         {/* End Selfie!!!! */}
 
         {/* Start Gym!!!! */}
-
+        <div class= "card">
         <div className="border addMargin">
           <ReactCardFlip className="border" isFlipped={this.state.isFlipped3} flipSpeedFrontToBack={1.0}
             flipSpeedBackToFront={1.0} flipDirection="horizontal">
@@ -159,11 +161,11 @@ class Trophy extends Component {
           </ReactCardFlip>
           <button onClick={this.handleClick3}>Click to flip</button>
         </div>
-
+        </div>
         {/* End Gym!!!! */}
 
         {/* Start Camping!!!! */}
-
+        <div class = "card">
         <div className="border addMargin">
           <ReactCardFlip className="border" isFlipped={this.state.isFlipped4} flipSpeedFrontToBack={1.0}
             flipSpeedBackToFront={1.0} flipDirection="horizontal">
@@ -182,10 +184,11 @@ class Trophy extends Component {
           </ReactCardFlip>
           <button onClick={this.handleClick4}>Click to flip</button>
         </div>
-
+        </div>
         {/* End Camping !!!! */}
 
         {/* Start Movies!!!! */}
+        <div class = "card">
         <div className="border addMargin">
           <ReactCardFlip className="border" isFlipped={this.state.isFlipped5} flipSpeedFrontToBack={1.0}
             flipSpeedBackToFront={1.0} flipDirection="horizontal">
@@ -204,11 +207,11 @@ class Trophy extends Component {
           </ReactCardFlip>
           <button onClick={this.handleClick5}>Click to flip</button>
         </div>
-
+        </div>
         {/* End Movies !!!! */}
 
         {/* Start Road Trip!!!! */}
-
+        <div class = "card">
         <div className="border addMargin">
           <ReactCardFlip className="border" isFlipped={this.state.isFlipped6} flipSpeedFrontToBack={1.0}
             flipSpeedBackToFront={1.0} flipDirection="horizontal">
@@ -227,9 +230,10 @@ class Trophy extends Component {
           </ReactCardFlip>
           <button onClick={this.handleClick6}>Click to flip</button>
         </div>
-
+        </div>
         {/* End Road Trip !!!! */}
 
+      </div>
       </div>
 
     )

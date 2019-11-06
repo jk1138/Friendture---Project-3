@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 // import { connect } from 'react-redux';
-import Navbar from "../components/Navbar";
 import RenderedProfile from "../components/profile/renderedProfile.js";
 import ProfileForm from "../components/profile/ProfileForm.js";
 import Trophies from "./Trophies.js"
