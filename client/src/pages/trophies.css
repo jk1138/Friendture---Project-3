@@ -1,28 +1,29 @@
 .border {
     border: #1E6994 solid !important;
     width: 200px;
-    height: 350px;
+    height: auto;
     margin: auto;
     border-radius: 10px;
   }
-
+  
   .row {
     display: flex; 
     flex-wrap: wrap ; 
     padding: 0 1px 
   } 
   
-
+  
   .addMargin {
     margin: 10px;
-
+    
   }
-
+  
   .img {
     margin-top: 10px;
   }
-
-.card {
+  
+  .card {
+ 
   display: flex;
  
   border: none;
