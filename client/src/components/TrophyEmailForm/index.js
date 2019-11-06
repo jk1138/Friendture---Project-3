@@ -1,17 +1,24 @@
 import React, { Component } from "react";
 import userAPI from "../../utils/userAPI";
 import "../../pages/trophies.css";
-import App from "../../App";
-// import postController from "../../../controllers"
 // back of card
 
 class TrophyEmailForm extends Component {
 
   state = {
-  email: "",
+
+
+   email: "",
     friendEmail: "",
     description: "",
     photoURL: ""
+
+
+    //  email: ""
+    //   friendEmail: "",
+    //   description: "",
+    //   photoURL: ""
+
   };
 
 
@@ -29,6 +36,32 @@ class TrophyEmailForm extends Component {
     });
   };
 
+  handleFormSubmit = event => {
+    // Preventing the default behavior of the form submit (which is to refresh the page)
+    event.preventDefault();
+
+    alert(`Hello ${this.state.email}
+      ${this.state.friendEmail}
+      ${this.state.description}
+      ${this.state.photoURL}`
+
+    )
+
+
+    this.updateUsers(this.state.userEmail, this.state);
+
+
+    this.setState({
+      email: "",
+      friendEmail: "",
+      description: "",
+      photoURL: ""
+    });
+
+
+
+  };
+
   updateUsers = (email, postData) => {
     userAPI.updateUsers(email, postData).then(
       (res) => {
@@ -37,50 +70,21 @@ class TrophyEmailForm extends Component {
       }
     ).catch(err => console.log(err))
   }
-  
 
-  handleFormSubmit = event => {
-    // Preventing the default behavior of the form submit (which is to refresh the page)
-    event.preventDefault();
-
-   
-    alert(`Hello ${this.state.email}
-      ${this.state.friendEmail}
-      ${this.state.description}
-      ${this.state.photoURL}`
-    )
-
-    let yourEmail = this.state.email;
-    let friendEmail = this.state.friendEmail;
-    let description = this. state. description;
-    let photo = this.state.photoURL; 
-    
+  onSubmit = (e) => {
+    e.preventDefault();
+    // if (this.state.yourEmail && this.state.friendEmail) {
+    //   userAPI.
+    // }
 
 
-    userAPI.updateUsers(
-    {_id : this.props.user},
-      { 
-        $push: {
-            trophies:  [{
-                yourEmail, friendEmail, description, photo
-              }]
-            
-          }
-        }
-      );
-
-    
-  };
+// onSubmit = (e) => {
+//   e.preventDefault();
+//   alert(this.props.name)
 
 
-//   onSubmit = (e) => {
-//     e.preventDefault();
-
-// alert(this.props.name)
-
-
-// this.updateUsers(this.props.name)
-//   }
+  // this.updateUsers(this.props.name)
+  }
 
 
 
