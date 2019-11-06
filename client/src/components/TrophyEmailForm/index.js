@@ -6,24 +6,24 @@ import "../../pages/trophies.css";
 class TrophyEmailForm extends Component {
 
   state = {
-   email: "",
-    friendEmail: "",
-    description: "",
-    photoURL: ""
+  //  email: ""
+  //   friendEmail: "",
+  //   description: "",
+  //   photoURL: ""
   };
 
 
   handleInputChange = event => {
     // Getting the value and name of the input which triggered the change
     let value = event.target.value;
-    const email = event.target.email;
-    const friendEmail = event.target.friendEmail;
-    const description = event.target.description;
-    const photoURL = event.target.photoURL;
+    const name = event.target.name;
+    // const friendEmail = event.target.friendEmail;
+    // const description = event.target.description;
+    // const photoURL = event.target.photoURL;
     this.setState({value: event.target.value});
     // Updating the input's state
     this.setState({
-      // [email,friendEmail,description,photoURL]: value
+      [name]: value
     });
   };
 
@@ -31,7 +31,11 @@ class TrophyEmailForm extends Component {
     // Preventing the default behavior of the form submit (which is to refresh the page)
     event.preventDefault();
   
-      alert(`Hello ${this.state.email} ${this.state.friendEmail} ${this.state.description} ${this.state.photoURL}`)
+      alert(`Hello ${this.state.email}
+      ${this.state.friendEmail}
+      ${this.state.description}
+      ${this.state.photoURL}`
+)
 
     this.setState({
       email: "",
@@ -68,24 +72,39 @@ class TrophyEmailForm extends Component {
     <form>
   <div class="form-group">
     <label for="exampleInputEmail1">Your Email</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
+    <input 
+    value={this.state.email}
+    name="email"
+    onChange={this.handleInputChange}
+    type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
     <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
   </div>
   <div class="form-group">
     <label for="exampleInputEmail1">Your Friend's Email</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
+    <input 
+      value={this.state.friendEmail}
+      name="friendEmail"
+      onChange={this.handleInputChange}
+      type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
     <small id="emailHelp" class="form-text text-muted">We'll never share your friend's email with anyone else.</small>
   </div>
 
      <div class="form-group">
     <label for="description">Description</label>
-    <input type="text" class="form-control" id="description" placeholder="In one word, how was it!?"/>
+    <input  value={this.state.description}
+      name="description"
+      onChange={this.handleInputChange}
+    type="text" class="form-control" id="description" placeholder="In one word, how was it!?"/>
   </div>
    <div class="form-group">
     <label for="photoURL">Photo URL</label>
-    <input type="text" class="form-control" id="photoURL" placeholder="Link to your photo"/>
+    <input 
+     value={this.state.photoURL}
+     onChange={this.handleInputChange}
+     name="photoURL"
+     type="text" class="form-control" id="photoURL" placeholder="Link to your photo"/>
   </div>
-  <button name="Got Pizza" type="submit" class="btn btn-primary" onClick={this.onSubmit}>Submit</button>
+  <button name="Got Pizza" type="submit" class="btn btn-primary" onClick={this.handleFormSubmit}>Submit</button>
 </form>
 </div>
 </div>
