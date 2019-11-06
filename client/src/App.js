@@ -1,5 +1,6 @@
 
 import FriendFeed from "./pages/Feed-Friendlist";
+import UserProfile from "./pages/UserProfile.js";
 
 import React from 'react';
 import Trophy from "./pages/Trophies";
@@ -13,6 +14,7 @@ import * as firebase from 'firebase/app';
 import 'firebase/auth';
 import firebaseConfig from './firebaseConfig';
 import userAPI from "./utils/userAPI";
+
 const firebaseApp = firebase.initializeApp(firebaseConfig);
 const firebaseAppAuth = firebaseApp.auth();
 const providers = {
@@ -187,6 +189,7 @@ class App extends React.Component {
           </header>
         </div>
       </div>
+
     );
   }
 }
