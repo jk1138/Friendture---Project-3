@@ -122,7 +122,7 @@ class FriendFeed extends Component {
 
                         <div className="col-md-3" id="friend-list">
                             <div>
-                                <h3>Hello, {this.props.user}</h3>
+                                <h3>Hello, {this.props.name}</h3>
                                 {/* <p>Email: {this.props.email}</p> */}
                                 <img src={this.props.image} className="profile-img" />
                             </div>
