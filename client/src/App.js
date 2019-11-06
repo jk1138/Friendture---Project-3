@@ -6,6 +6,7 @@ import React from 'react';
 import Trophy from "./pages/Trophies";
 // import UserProfile from "./pages/UserProfile";
 import Navbar from "./components/Navbar";
+import LandingPage from "./components/LandingPage/index.js";
 import { Route, Switch, BrowserRouter as Router } from 'react-router-dom'
 // import logo from './logo.svg';
 import './App.css';
@@ -31,12 +32,16 @@ class App extends React.Component {
   // componentDidMount(){
   //   this.realSignIn();
   // }
+  state={
+    userEmail: ""
+  }
 
 
   savingUsers = (userData) => {
     userAPI.saveUsers(userData).then(
       (res) => {
         console.log(res);
+
       }
     ).catch(err => console.log(err))
   }
@@ -45,15 +50,20 @@ class App extends React.Component {
 
     this.props.signInWithGoogle().then((res) => {
       console.log(res)
-      const email = res.additionalUserInfo.profile.email
+      const email = res.additionalUserInfo.profile.email;
+      const fullName = res.additionalUserInfo.profile.name;
 
-      const userData = { email: email }
+      const userData = {
+        email: email,
+        fullname: fullName
+      };
       console.log(userData)
 
 
       if (res.additionalUserInfo.isNewUser === true) {
         this.savingUsers(userData)
-      }
+      };
+      this.setState({userEmail: email})
 
     })
 
@@ -99,20 +109,19 @@ class App extends React.Component {
                   <Router>
                     <div>
                       <Switch>
-                        <Route exact path="/"  render={()=><FriendFeed name={user.displayName} image={user.photoURL}/>} />
+                        <Route exact path="/"  render={()=><FriendFeed name={user.displayName} image={user.photoURL} email={this.state.userEmail}/>} />
                         <Route exact path="/HomePage"  render={()=><FriendFeed name={user.displayName} image={user.photoURL}/>} />
-                        <Route exact path="/myprofile" render={()=><UserProfile name={user.displayName} image={user.photoURL}/>}/> 
+                        <Route exact path="/myprofile" render={()=><UserProfile name={user.displayName} image={user.photoURL} email={this.state.userEmail}/>}/> 
                       </Switch>
                     </div>
                   </Router>
-
-                  {/* <FriendFeed name={user.displayName} image={user.photoURL}/> */}
-
                 </div>
 
 
 
-                : <p>Please sign in.</p>
+
+                : <p>Please sign in.</p> 
+
             }
             {
               user
@@ -152,9 +161,11 @@ class App extends React.Component {
                   </div>
                 </button>
 
-                : <button onClick={this.realSignIn} href="/auth/google" class="button">
+                :  <button onClick={this.realSignIn} href="/auth/google" class="button">
+
 
                   <div>
+
                     <span class="svgIcon t-popup-svg">
                       <svg
                         class="svgIcon-use"
@@ -185,9 +196,12 @@ class App extends React.Component {
                     <span class="button-label">Sign in with Google</span>
                   </div>
                 </button>
+              
             }
           </header>
+          <div><LandingPage /></div>
         </div>
+  
       </div>
 
     );

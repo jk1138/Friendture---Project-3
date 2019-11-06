@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 // import { connect } from 'react-redux';
+import '../App.css';
 import RenderedProfile from "../components/profile/renderedProfile.js";
 import ProfileForm from "../components/profile/ProfileForm.js";
 import Trophies from "./Trophies.js"
@@ -40,7 +41,7 @@ class Profile extends Component {
                 < div className="profileFormHolder">
                     {/* <ProfileForm /> */}
                     <div className="row justify-content-center">
-                        < RenderedProfile name={this.props.name} image={this.props.image}/>
+                        < RenderedProfile name={this.props.name} image={this.props.image} email={this.props.email}/>
                     </div>
             
                 </div>

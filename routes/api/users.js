@@ -5,10 +5,12 @@ router.route("/")
   .get(userController.findAllUsers)
   .post(userController.createUser);
 
-router
-  .route("/:id")
+router.route("/:id")
   .get(userController.findUserById)
-  .put(userController.updateUser)
   .delete(userController.removeUser);
+
+router.route("/:email")
+  .get(userController.findUserByEmail)
+  .put(userController.updateUser);
 
 module.exports = router;

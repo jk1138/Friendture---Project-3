@@ -7,7 +7,7 @@ class renderedProfile extends Component {
     render() {
         return (
             <div class = "container-fluid">
-                <div className="jumbotron justify-content-center ProfileBackground">
+                <div className="jumbotron justify-content-center feedBackground">
                     <h1>Welcome to Your Profile</h1>
                 </div>
                 <div class = "row">

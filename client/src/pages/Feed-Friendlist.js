@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import postAPI from "../utils/postAPI.js";
 import Trophy from "../pages/Trophies.js";
 import data from "../utils/trophies.json";
+import '../App.css';
 
 class FriendFeed extends Component {
 
@@ -114,7 +115,7 @@ class FriendFeed extends Component {
                         <div className="col-md-3">
                             <h3>Have you done these recently?</h3>
                             <div class="row justify-content-center">
-                                <Trophy />
+                                <Trophy email={this.props.email}/>
                             </div>
                         </div>
 

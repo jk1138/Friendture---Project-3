@@ -7,10 +7,18 @@ class TrophyEmailForm extends Component {
 
   state = {
 
+
    email: "",
     friendEmail: "",
     description: "",
     photoURL: ""
+
+
+    //  email: ""
+    //   friendEmail: "",
+    //   description: "",
+    //   photoURL: ""
+
   };
 
 
@@ -21,7 +29,7 @@ class TrophyEmailForm extends Component {
     // const friendEmail = event.target.friendEmail;
     // const description = event.target.description;
     // const photoURL = event.target.photoURL;
-    this.setState({value: event.target.value});
+    this.setState({ value: event.target.value });
     // Updating the input's state
     this.setState({
       [name]: value
@@ -31,12 +39,18 @@ class TrophyEmailForm extends Component {
   handleFormSubmit = event => {
     // Preventing the default behavior of the form submit (which is to refresh the page)
     event.preventDefault();
-  
-      alert(`Hello ${this.state.email}
+
+    alert(`Hello ${this.state.email}
       ${this.state.friendEmail}
       ${this.state.description}
       ${this.state.photoURL}`
-)
+
+    )
+
+    );
+
+    this.updateUsers(this.state.userEmail, this.state);
+
 
     this.setState({
       email: "",
@@ -46,11 +60,13 @@ class TrophyEmailForm extends Component {
     });
 
 
+
   };
 
-  updateUsers = (userData) => {
-    userAPI.updateUsers(userData).then(
+  updateUsers = (email, postData) => {
+    userAPI.updateUsers(email, postData).then(
       (res) => {
+        console.log("Hello from the form update")
         console.log(res);
       }
     ).catch(err => console.log(err))
@@ -61,6 +77,7 @@ class TrophyEmailForm extends Component {
     // if (this.state.yourEmail && this.state.friendEmail) {
     //   userAPI.
     // }
+
 
 // onSubmit = (e) => {
 //   e.preventDefault();
@@ -117,8 +134,8 @@ class TrophyEmailForm extends Component {
 </div>
 </div>
 
-    )
+
   }
-}
+
 
 export default TrophyEmailForm;
