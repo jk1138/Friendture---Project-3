@@ -72,6 +72,23 @@ function LandingPage() {
       </div>
     </li>
     </ul>
+    <br></br>
+    <br></br>
+    <br></br>
+  <div class="card " >
+  <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80" class="card-img" id="lastimage" alt="..."></img>
+  <div class="card-img-overlay">
+  <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <h1 class="display-4">So start your adventure with Friendture today...</h1>
+  </div>
+</div>
   </div>
   )
 }
