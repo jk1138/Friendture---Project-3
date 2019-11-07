@@ -72,7 +72,6 @@ class FriendFeed extends Component {
 
             if(this.props.name === theUsers[i].fullname){
                 this.setState({uTrophs: theUsers[i].trophies});
-                console.log("feed state: " + this.state.uTrophs)
             };
 
             for(let i = 0; i < this.state.uTrophs.length; i++){

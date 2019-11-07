@@ -28,6 +28,11 @@ const userController = {
       .then(dbUser => res.json(dbUser))
       .catch(err => res.status(422).json(err));
   },
+  updateUserT: function (req, res) {
+    db.User.findOneAndUpdate({ email: req.query.email }, {$push: {trophies:req.body}})
+      .then(dbUser => res.json(dbUser))
+      .catch(err => res.status(422).json(err));
+  },
   removeUser: function (req, res) {
     db.User.findById({ _id: req.params.id })
       .then(dbUser => dbUser.remove())

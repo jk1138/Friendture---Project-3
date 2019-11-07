@@ -9,7 +9,7 @@ class TrophyEmailForm extends Component {
 
   state = {
   email: "",
-    friendEmail: "",
+    title: "",
     description: "",
     photoURL: ""
   };
@@ -36,7 +36,16 @@ class TrophyEmailForm extends Component {
         console.log(res);
       }
     ).catch(err => console.log(err))
-  }
+  };
+  
+  updateUsersT = (email, postData) => {
+    userAPI.updateUsersT(email, postData).then(
+      (res) => {
+        console.log("Hello from the trophy update")
+        console.log(res);
+      }
+    ).catch(err => console.log(err))
+  };
   
 
   handleFormSubmit = event => {
@@ -45,31 +54,26 @@ class TrophyEmailForm extends Component {
 
    
     alert(`Hello ${this.state.email}
-      ${this.state.friendEmail}
+      ${this.state.title}
       ${this.state.description}
       ${this.state.photoURL}`
-    )
+    );
 
     let yourEmail = this.state.email;
-    let friendEmail = this.state.friendEmail;
-    let description = this. state. description;
+    let title = this.state.title;
+    let description = this.state.description;
     let photo = this.state.photoURL; 
+
+    let trophy = document.getElementById("head-du-form").value;
     
 
 
-    userAPI.updateUsers(
-    {_id : this.props.user},
-      { 
-        $push: {
-            trophies:  [{
-                yourEmail, friendEmail, description, photo
-              }]
-            
-          }
-        }
-      );
-
-    
+    this.updateUsers(
+    yourEmail,{email: yourEmail, title: title, body: description, pic: photo, date: Date.now}
+    );
+    this.updateUsersT(
+      yourEmail,{trophy}
+    );
   };
 
 
@@ -88,7 +92,7 @@ class TrophyEmailForm extends Component {
     return (
       <div class="col">
         <div>
-          <h1>Details</h1>
+          <h1 id="head-du-form">{this.props.troph}</h1>
           <form>
             <div class="form-group">
               <label for="exampleInputEmail1">Your Email</label>
@@ -100,13 +104,13 @@ class TrophyEmailForm extends Component {
               <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
             </div>
             <div class="form-group">
-              <label for="exampleInputEmail1">Your Friend's Email</label>
+              <label for="exampleInputEmail1">Post Title</label>
               <input
-                value={this.state.friendEmail}
-                name="friendEmail"
+                value={this.state.title}
+                name="title"
                 onChange={this.handleInputChange}
-                type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
-              <small id="emailHelp" class="form-text text-muted">We'll never share your friend's email with anyone else.</small>
+                type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Title" />
+              <small id="emailHelp" class="form-text text-muted"></small>
             </div>
 
             <div class="form-group">

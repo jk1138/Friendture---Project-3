@@ -15,7 +15,14 @@ class Trophy extends Component {
       users: [],
       isFlipped1: false,
       isFlipped2: false,
-      isFlipped: false
+      isFlipped: false,
+      trop1: "pizza",
+      trop2: "selfie",
+      trop3: "gym",
+      trop4: "camping",
+      trop5: "movie",
+      trop6: "trip",
+
     };
     this.handleClick1 = this.handleClick1.bind(this);
     this.handleClick2 = this.handleClick2.bind(this);
@@ -102,7 +109,7 @@ class Trophy extends Component {
               This is the front of the card.
           </TrophyImages>
 
-            <TrophyEmailForm className="border" key="back">
+            <TrophyEmailForm className="border" key="back" troph={this.state.trop1}>
               This is the back of the card.
           </TrophyEmailForm>
           </ReactCardFlip>
@@ -123,8 +130,7 @@ class Trophy extends Component {
               This is the front of the card.
           </TrophyImages>
 
-            <TrophyEmailForm className="border" key="back"
-            >
+            <TrophyEmailForm className="border" key="back" troph={this.state.trop2}>
               This is the back of the card.
           </TrophyEmailForm>
           </ReactCardFlip>
@@ -146,7 +152,7 @@ class Trophy extends Component {
               This is the front of the card.
           </TrophyImages>
 
-            <TrophyEmailForm className="border" key="back">
+            <TrophyEmailForm className="border" key="back" troph={this.state.trop3}>
               This is the back of the card.
           </TrophyEmailForm>
           </ReactCardFlip>
@@ -168,8 +174,7 @@ class Trophy extends Component {
               This is the front of the card.
           </TrophyImages>
 
-            <TrophyEmailForm className="border" key="back"
-            >
+            <TrophyEmailForm className="border" key="back" troph={this.state.trop4}>
               This is the back of the card.
           </TrophyEmailForm>
           </ReactCardFlip>
@@ -190,8 +195,7 @@ class Trophy extends Component {
               This is the front of the card.
           </TrophyImages>
 
-            <TrophyEmailForm className="border" key="back"
-            >
+            <TrophyEmailForm className="border" key="back" troph={this.state.trop5}>
               This is the back of the card.
           </TrophyEmailForm>
           </ReactCardFlip>
@@ -213,8 +217,7 @@ class Trophy extends Component {
               This is the front of the card.
           </TrophyImages>
 
-            <TrophyEmailForm className="border" key="back"
-            >
+            <TrophyEmailForm className="border" key="back" troph={this.state.trop6}>
               This is the back of the card.
           </TrophyEmailForm>
           </ReactCardFlip>
