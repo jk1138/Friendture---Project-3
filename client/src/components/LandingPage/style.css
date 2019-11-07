@@ -6,16 +6,11 @@
     font-weight: bold;
 }
 #lastimage{
-    background-image: url(./images/lastimage.jpeg);
     opacity: 70%;
     border-radius: 90px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 90%;
 }
-#jane{
-    background-image: url(./images/image1.png);
+#firstimage{
     opacity: 85%;
     border-radius: 40px;
-    
+    height: 60%;
 }
