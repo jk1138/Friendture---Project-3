@@ -15,7 +15,7 @@ function LandingPage() {
         </div>
       </div>
       <div class="card mb-3">
-          <img src="https://newpathways.co/wp-content/uploads/2017/10/friends-having-coffee-in-cafe.png" class="card-img-top" alt="..."></img>
+          <img src="image1.png" alt= "" id="jane" width= "auto" height ="400"></img>
             <div class="card-body">
               <h5 class="card-title">Jane's Testimonial:</h5>
               <p class="card-text"><small class="text-muted">Duis sit amet risus sed ex tempus accumsan et in justo. Nam pharetra lacinia vehicula. Sed maximus dolor non lacus lacinia, et rhoncus libero cursus. Phasellus ultricies elementum orci, id gravida turpis vulputate a. Nulla a faucibus sem. Curabitur sit amet efficitur ante. Mauris laoreet faucibus elit ut luctus. Aenean sed lorem non diam feugiat viverra eget eget diam.</small></p>
@@ -50,7 +50,7 @@ function LandingPage() {
       <br></br>
     <ul class="list-unstyled">
     <li class="media">
-      <img src="http://www.outsourcecio.co.za/images/tim-profile-pic-round.png" class="mr-3" alt="..."></img>
+      <img src="http://www.outsourcecio.co.za/images/tim-profile-pic-round.png" class="mr-3" alt=""></img>
       <div class="media-body">
         <h5 class="mt-0 mb-1">John's Exprience with Friendture</h5>
         "Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus."
@@ -76,11 +76,12 @@ function LandingPage() {
     <br></br>
     <br></br>
   <div class="card " >
-  <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80" class="card-img" id="lastimage" alt="..."></img>
+  <img src="./images/lastimage.jpeg" class="card-img" id="lastimage" alt="" width= "auto" height ="650"></img>
   <div class="card-img-overlay">
   <br></br>
 
-    <h1 class="display-4">So start your adventure with Friendture today...</h1>
+    <h1 class="display-4">So start your adventure </h1>
+    <h1 class= "display-4">with Friendture today...</h1>
   </div>
 </div>
   </div>
