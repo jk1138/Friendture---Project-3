@@ -1,11 +1,9 @@
 const router = require("express").Router();
 const trophyController = require("../../controllers/trophyController");
-
-router.route("/")
-  .get(trophyController.findAllTrophies);
+const userController = require("../../controllers/userController");
 
 router
-  .route("/:id")
-  .put(trophyController.updateTrophy);
+  .route("/:email")
+  .put(userController.updateUserT);
 
 module.exports = router;

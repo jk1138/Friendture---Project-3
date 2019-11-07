@@ -11,6 +11,7 @@ router.route("/:id")
 
 router.route("/:email")
   .get(userController.findUserByEmail)
-  .put(userController.updateUser);
+  .put(userController.updateUser)
+  .put(userController.updateUserT);
 
 module.exports = router;

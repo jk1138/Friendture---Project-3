@@ -10,7 +10,11 @@ export default {
     },
 
     updateUsers: function (email, userData) {
-        return axios.put("/api/users/" + email, userData)
+        return axios.put("/api/users/" + email, userData);
+    },
+
+    updateUsersT: function (email, userData) {
+        return axios.put("/api/trophy/" + email, userData);
     },
 
     getUserbyEmail: function (email){
