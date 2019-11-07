@@ -15,7 +15,7 @@ function LandingPage() {
         </div>
       </div>
       <div class="card mb-3">
-          <img src="image1.png" alt= "" id="jane" width= "auto" height ="400"></img>
+          <img src="https://www.tgh.org/sites/default/files/pictures/News/coffee_drinkers.jpg" class="card-img" id="firstimage" alt=""></img>
             <div class="card-body">
               <h5 class="card-title">Jane's Testimonial:</h5>
               <p class="card-text"><small class="text-muted">Duis sit amet risus sed ex tempus accumsan et in justo. Nam pharetra lacinia vehicula. Sed maximus dolor non lacus lacinia, et rhoncus libero cursus. Phasellus ultricies elementum orci, id gravida turpis vulputate a. Nulla a faucibus sem. Curabitur sit amet efficitur ante. Mauris laoreet faucibus elit ut luctus. Aenean sed lorem non diam feugiat viverra eget eget diam.</small></p>
@@ -76,7 +76,7 @@ function LandingPage() {
     <br></br>
     <br></br>
   <div class="card " >
-  <img src="./images/lastimage.jpeg" class="card-img" id="lastimage" alt="" width= "auto" height ="650"></img>
+  <img src="https://www.cogitocorp.com/wp-content/uploads/2018/01/2017-in-review-and-whats-on-the-horizon-for-2018-header.jpg" class="card-img" id="lastimage" alt="" ></img>
   <div class="card-img-overlay">
   <br></br>
 
