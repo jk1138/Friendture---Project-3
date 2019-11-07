@@ -118,7 +118,7 @@ class App extends React.Component {
                 </div>
 
 
-                : <p>Please sign in.</p> 
+                : <p></p> 
 
 
             }
@@ -128,7 +128,8 @@ class App extends React.Component {
                 ?
    
                 <button onClick={signOut} href="/auth/google" class="button">
-                  
+                  <br></br>
+                  <br></br>
                   <div>
                     <span class="svgIcon t-popup-svg">
                       <svg
@@ -166,7 +167,8 @@ class App extends React.Component {
                       <LandingPage /> 
                     </div>
                     
-                  <button onClick={this.realSignIn} href="/auth/google" class="button">
+                  <button onClick={this.realSignIn} href="/auth/google" class="btn btn-primary" class= "button">
+ 
                   <div>
                     <span class="svgIcon t-popup-svg">
                       <svg

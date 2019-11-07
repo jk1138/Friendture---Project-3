@@ -14,6 +14,7 @@ const trophyController = {
       .then(dbTrophy => res.json(dbTrophy))
       .catch(err => res.status(422).json(err));
   },
+  
 };
 
 module.exports=trophyController;
