@@ -59,7 +59,6 @@ class FriendFeed extends Component {
     };
 
     renderPosts = () => {
-        console.log(this.state.users);
 
         const theUsers = this.state.users;
 
