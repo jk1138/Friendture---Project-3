@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import userAPI from "../../utils/userAPI";
 import Trophy from "../../pages/TrophiesProfile.js";
+import TrophyProf from "../../pages/TrophiesProfile.js";
 
 class renderedProfile extends Component {
 
@@ -28,7 +29,7 @@ class renderedProfile extends Component {
                         <h4>Trophies</h4>
                     </div>    
                     <div class= "col-md-12">
-                        <Trophy />
+                        <TrophyProf  pizza={this.props.pizza} selfie={this.props.selfie} gym={this.props.gym} camping={this.props.camping} movie={this.props.movie} trip={this.props.trip} />
                     </div>
                 </div>
 

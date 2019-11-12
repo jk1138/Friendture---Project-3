@@ -39,6 +39,7 @@ class TrophyEmailForm extends Component {
   };
   
   updateUsersT = (email, postData) => {
+    console.log(postData);
     userAPI.updateUsersT(email, postData).then(
       (res) => {
         console.log("Hello from the trophy update")
@@ -53,38 +54,72 @@ class TrophyEmailForm extends Component {
     event.preventDefault();
 
    
-    alert(`Hello ${this.state.email}
-      ${this.state.title}
-      ${this.state.description}
-      ${this.state.photoURL}`
-    );
+  //   alert(`Hello ${this.state.email}
+  //     ${this.state.title}
+  //     ${this.state.description}
+  //     ${this.state.photoURL}`
+  //   );
 
     let yourEmail = this.state.email;
     let title = this.state.title;
     let description = this.state.description;
     let photo = this.state.photoURL; 
 
-    let trophy = document.getElementById("head-du-form").value;
+  this.setState({
+    email: yourEmail,
+    title: title,
+    description: description,
+     photoURL: photo
+  });
+
+    let trophy = this.props.troph;
+    console.log(trophy);
     
 
 
-    this.updateUsers(
-    yourEmail,{email: yourEmail, title: title, body: description, pic: photo, date: Date.now}
+  this.updateUsers(
+    yourEmail,{email: this.state.email, title: this.state.title, body: this.state.description, pic: this.state.photoURL, date: Date.now}
     );
     this.updateUsersT(
-      yourEmail,{trophy}
+      yourEmail,trophy
     );
   };
 
-
-//   onSubmit = (e) => {
-//     e.preventDefault();
-
-// alert(this.props.name)
-
-
-// this.updateUsers(this.props.name)
-//   }
+//   handleFormSubmit = event => {
+//     // Preventing the default behavior of the form submit (which is to refresh the page)
+//     event.stopPropogation();
+// ​
+   
+//     alert(`Hello ${this.state.email}
+//       ${this.state.title}
+//       ${this.state.description}
+//       ${this.state.photoURL}`
+//     );
+// ​
+//     let yourEmail = this.state.email;
+//     let title = this.state.title;
+//     let description = this.state.description;
+//     let photo = this.state.photoURL; 
+// ​
+// ​
+//     this.setState({
+//       email: yourEmail,
+//       title: title,
+//       description: description,
+//        photoURL: photo
+//     });
+    
+//     let trophy = document.getElementById("head-du-form").value;
+    
+// ​
+// ​
+//     this.updateUsers(
+//     yourEmail,{email: this.state.email, title: this.state.title, body: this.state.description, pic: this.state.photoURL, date: Date.now}
+//     );
+//     this.updateUsersT(
+//       yourEmail,{trophy}
+//     );
+//   };
 
 
 
@@ -92,7 +127,7 @@ class TrophyEmailForm extends Component {
     return (
       <div class="col">
         <div>
-          <h1 id="head-du-form">{this.props.troph}</h1>
+          <h1 id="head-du-form" value={this.props.troph}>{this.props.troph}</h1>
           <form>
             <div class="form-group">
               <label for="exampleInputEmail1">Your Email</label>

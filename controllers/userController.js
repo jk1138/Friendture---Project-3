@@ -24,12 +24,13 @@ const userController = {
       .catch(err => res.status(422).json(err));
   },
   updateUser: function (req, res) {
-    db.User.findOneAndUpdate({ email: req.query.email }, {$push: {posts:req.body}})
+    db.User.findOneAndUpdate({ email: req.params.email }, {$push: {posts:req.body}})
       .then(dbUser => res.json(dbUser))
       .catch(err => res.status(422).json(err));
   },
   updateUserT: function (req, res) {
-    db.User.findOneAndUpdate({ email: req.query.email }, {$push: {trophies:req.body}})
+    let string = Object.keys(req.body)[0];
+    db.User.findOneAndUpdate({ email: req.params.email }, {$push: {trophies:string}})
       .then(dbUser => res.json(dbUser))
       .catch(err => res.status(422).json(err));
   },

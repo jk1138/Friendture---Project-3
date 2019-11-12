@@ -118,7 +118,7 @@ class App extends React.Component {
                 </div>
 
 
-                : <p>Please sign in.</p> 
+                : <p></p> 
 
 
             }
